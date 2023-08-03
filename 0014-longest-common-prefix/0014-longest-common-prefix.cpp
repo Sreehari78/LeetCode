@@ -15,7 +15,7 @@ public:
             if(s1[i] == s2[i]) s += s1[i];
             else break;
         }
-
+        
         return s;
     }
 };
