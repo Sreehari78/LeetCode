@@ -9,7 +9,7 @@ public:
             if(nMap.find(complement) != nMap.end()) return{nMap[complement], i};
             nMap[nums[i]] = i;
         }
-
+        
         return{};
     }
 };
