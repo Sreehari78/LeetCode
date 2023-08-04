@@ -19,8 +19,10 @@ public:
 
         while(list1 != nullptr && list2 != nullptr){
             if(list1 -> val == list2 -> val){
-                temp -> next = new ListNode(list1 -> val, new ListNode(list2 -> val));
-                temp = temp -> next -> next;
+                temp -> next = new ListNode(list1 -> val);
+                temp = temp -> next;
+                temp -> next = new ListNode(list2 -> val);
+                temp = temp -> next;
                 list1 = list1 -> next;
                 list2 = list2 -> next;
             }
