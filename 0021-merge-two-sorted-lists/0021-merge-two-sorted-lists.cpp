@@ -40,13 +40,8 @@ public:
             }
         }
 
-        if(list1 != nullptr){
-            temp -> next = list1;
-        }
-
-        else if(list2 != nullptr){
-            temp -> next = list2;
-        }
+        if(list1 != nullptr) temp -> next = list1;
+        else if(list2 != nullptr) temp -> next = list2;
 
         list3 = list3 -> next;
         return list3;
