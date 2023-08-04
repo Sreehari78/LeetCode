@@ -40,16 +40,12 @@ public:
             }
         }
 
-        while(list1 != nullptr){
-            temp -> next = new ListNode(list1 -> val);
-            temp = temp -> next;
-            list1 = list1 -> next;
+        if(list1 != nullptr){
+            temp -> next = list1;
         }
 
-        while(list2 != nullptr){
-            temp -> next = new ListNode(list2 -> val);
-            temp = temp -> next;
-            list2 = list2 -> next;
+        else if(list2 != nullptr){
+            temp -> next = list2;
         }
 
         list3 = list3 -> next;
