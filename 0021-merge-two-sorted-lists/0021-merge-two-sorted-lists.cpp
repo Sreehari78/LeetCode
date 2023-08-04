@@ -51,7 +51,7 @@ public:
             temp = temp -> next;
             list2 = list2 -> next;
         }
-        
+
         list3 = list3 -> next;
         return list3;
     }
