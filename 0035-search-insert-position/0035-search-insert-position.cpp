@@ -9,7 +9,7 @@ public:
             if(nums[mid] > target)  end = mid - 1;
             if(nums[mid] < target) start = mid + 1;
         }
-
+        
         if(nums[mid] < target) return mid+1;
         return mid;
     }
