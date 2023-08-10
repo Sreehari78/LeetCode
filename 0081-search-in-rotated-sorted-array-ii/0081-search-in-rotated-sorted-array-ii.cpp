@@ -4,7 +4,9 @@ using namespace std;
 class Solution {
 public:
     bool search(vector<int>& nums, int target) {
+        
         return newSearch(nums,target,0,nums.size()-1);
+ 
     }
     bool newSearch(vector<int>& nums, int target,int start,int end)
     {
