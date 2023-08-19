@@ -10,9 +10,7 @@ public:
                 if(max < (start - end + 1)) max = start - end + 1;
                 st.insert(s[start++]);
             }
-            else {
-                st.erase(s[end++]);
-            }
+            else st.erase(s[end++]);
         }
 
        return max;
