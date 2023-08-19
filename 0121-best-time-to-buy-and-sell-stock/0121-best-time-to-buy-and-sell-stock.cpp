@@ -4,12 +4,13 @@ public:
         int n = prices.size();
         int minimum = prices[0];
         int profit = 0;
+
         for (auto it: prices)
         {
-            profit=max(profit, it - minimum);
-            minimum=min(minimum, it);
+            if(profit < (it - minimum)) profit = it - minimum;
+            if(minimum > it) minimum = it;
         }
+
         return profit;   
     }
 };
-
