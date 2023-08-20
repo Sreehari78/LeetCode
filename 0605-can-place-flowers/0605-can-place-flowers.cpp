@@ -4,6 +4,7 @@ public:
         int length = flowerbed.size();
 
         if(n == 0) return true;
+
         if(length == 1)
             if(n > 1) return false;
             else if(flowerbed[0] == 0) return true;
