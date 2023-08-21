@@ -6,7 +6,7 @@ public:
 
         for(int i = 0; i < n; i++) {
 
-            if(mp[nums[i]] == 0) mp[nums[i]] = i + 1;
+            if(!mp[nums[i]]) mp[nums[i]] = i + 1;
             else {
                 diff = abs(i + 1 - mp[nums[i]]);
                 mp[nums[i]] = i + 1;
