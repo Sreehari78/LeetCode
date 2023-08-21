@@ -8,7 +8,7 @@ public:
 
             if(mp[nums[i]] == 0) mp[nums[i]] = i + 1;
             else {
-                diff = i + 1 - mp[nums[i]];
+                diff = abs(i + 1 - mp[nums[i]]);
                 mp[nums[i]] = i + 1;
                 if(diff <= k) return true;
             }
