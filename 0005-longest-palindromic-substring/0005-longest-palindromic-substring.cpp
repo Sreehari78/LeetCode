@@ -7,8 +7,6 @@ public:
         
         int n = s.length(), st = 0, end = 0, max_length = 0;
 
-
-        
         for(int i = 0; i < n; i++)  {
             int l = i, r = i;
             while(l >= 0 && r < n)
