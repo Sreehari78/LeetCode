@@ -1,32 +1,48 @@
 class Solution {
 public:
-    string longestPalindrome(string rev) {
-        int length = 0, n = rev.length();
-        string s = rev;
-        reverse(s.begin(), s.end());
-        string pal = "";
-        // pal += s[0];
 
-        if(n == 1) return s;
+    string longestPalindrome(string s) {
 
-        if(s == rev) return rev;
+        if(s.length() <= 1) return s;
         
-        for(int i = 0; i < n; i++) {
-            
-            for(int j = n - 1; j > -1; j--) {
+        int n = s.length(), st = 0, end = 0, max_length = 0;
 
-                if(s[i] != s[j]) continue;
-                int diff = abs(i - j) + 1;
-                string s1 = s.substr(i, diff);
-                string s2 = s1;
-                reverse(s1.begin(), s1.end());
-                if(s1 == s2 && length < s1.length()) {
-                    length = s1.length();
-                    pal = s1;
-                } 
+
+        
+        for(int i = 0; i < n; i++)  {
+            int l = i, r = i;
+            while(l >= 0 && r < n)
+                if(s[l] == s[r]) {
+                    l--;
+                    r++;
+                }
+                else break;
+            
+            int length = r - l - 1;
+            if(length > max_length) {
+
+                max_length = length;
+                st = l + 1;
             }
         }
 
-        return pal;
+        for(int i = 0; i < n; i++)  {
+            int l = i, r = i+1;
+            while(l >= 0 && r < n)
+                if(s[l] == s[r]) {
+                    l--;
+                    r++;
+                }
+                else break;
+            
+            int length = r - l - 1;
+            if(length > max_length) {
+
+                max_length = length;
+                st = l + 1;
+            }
+        }
+
+        return s.substr(st, max_length);
     }
 };
