@@ -8,60 +8,54 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+ 
 class Solution {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 
-        int n = l1->val + l2->val;
-        if(n > 9) {
-            if(l1->next != nullptr) l1->next->val++;
-            else if(l2->next != nullptr) l2->next->val++;
-            else l1->next = new ListNode(1);
-            n %= 10;
+    int len(ListNode* head){
+        if(head==NULL) return 0;
+        int count = 0;
+        while(head){
+            count++;
+            head = head->next;
         }
+        return count;
+    }
 
-        l1 = l1->next;
-        l2 = l2->next;
-        ListNode* head = new ListNode(n);
+    ListNode* add(ListNode* l1, ListNode* l2) {
+
+        ListNode* head = new ListNode(-1);
         ListNode* ptr = head;
-        
-        while(l1 != nullptr && l2 != nullptr) {
-            n = l1->val + l2->val;
+
+        while(l1) {
+
+            int n = l1->val;
+            if(l2) {
+                n += l2->val;
+                l2 = l2->next;
+            }
 
             if(n > 9) {
-                if(l1->next != nullptr) l1->next->val++;
-                else if(l2->next != nullptr) l2->next->val++;
+                if(l1->next) l1->next->val++;
                 else l1->next = new ListNode(1);
                 n %= 10;
             }
+
+            l1 = l1->next;
             ptr->next = new ListNode(n);
             ptr = ptr->next;
-            l1 = l1->next;
-            l2 = l2->next;
         }
 
-        while(l1 != nullptr) {
-             if(l1->val > 9) {
-                if(l1->next != nullptr) l1->next->val++;
-                else l1->next = new ListNode(1);
-                l1->val %= 10;
-            }
-            ptr->next = new ListNode(l1->val);
-            ptr = ptr->next;
-            l1 = l1->next;
-        }
-
-        while(l2 != nullptr) {
-            if(l2->val > 9) {
-                if(l2->next != nullptr) l2->next->val++;
-                else l2->next = new ListNode(1);
-                l2->val %= 10;
-            }
-            ptr->next = new ListNode(l2->val);
-            ptr = ptr->next;
-            l2 = l2->next;
-        }
-
+        head = head->next;
         return head;
+
+    }
+    
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+
+        int n1 = len(l1), n2 = len(l2);
+
+        if(n1 > n2) return add(l1, l2);
+        return add(l2, l1);
     }
 };
