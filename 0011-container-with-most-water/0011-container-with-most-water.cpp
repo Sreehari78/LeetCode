@@ -14,7 +14,6 @@ public:
 
             (height[start] > height[end]) ? end-- : start++;
         }
-            
         
         return area;
     }
