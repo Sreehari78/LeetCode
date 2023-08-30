@@ -14,8 +14,6 @@ public:
                 if(r > 0 && r < numRows - 1 && i + j - 2*r < n) str += s[i + j - 2*r];
             }
         }
-
-        return str;
-        
+        return str;   
     }
 };
