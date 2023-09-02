@@ -6,14 +6,13 @@ public:
         std::cout.tie(nullptr);
 
         int product = 1, c = 0;
-        vector<int> answer;
         
         for(int i = 0; i < nums.size(); i++)
             if(nums[i] != 0) product *= nums[i];
             else c++;
-
-        answer.clear();
-
+        
+        vector<int> answer;
+        
         for(int i = 0; i < nums.size(); i++){
             if(!c) answer.push_back(product / nums[i]);
             else if(c == 1 && nums[i] == 0) answer.push_back(product);
