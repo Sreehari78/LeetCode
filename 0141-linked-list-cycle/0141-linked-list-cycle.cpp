@@ -7,26 +7,22 @@
  * };
  */
 class Solution {
-public:
-    bool hasCycle(ListNode *head) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
-        if(head == nullptr) return false;
+ public:
+  bool hasCycle(ListNode* head) {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+    
+    ListNode* slow = head;
+    ListNode* fast = head;
 
-        ListNode* ptr1 = head;
-        ListNode* ptr2 = head;
-
-        ptr2 = ptr2->next;
-
-        while(ptr1->next != nullptr && ptr2->next != nullptr) {
-            if(ptr1 == ptr2) return true;
-            ptr1 = ptr1->next;
-            ptr2 = ptr2->next;
-            if(ptr2->next !=nullptr) ptr2= ptr2->next;
-            else return false;
-        }
-        return false;
+    while (fast && fast->next) {
+      slow = slow->next;
+      fast = fast->next->next;
+      if (slow == fast)
+        return true;
     }
+
+    return false;
+  }
 };
