@@ -8,11 +8,7 @@
  */
 class Solution {
  public:
-  bool hasCycle(ListNode* head) {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    std::cout.tie(nullptr);
-    
+  bool hasCycle(ListNode* head) {  
     ListNode* slow = head;
     ListNode* fast = head;
 
