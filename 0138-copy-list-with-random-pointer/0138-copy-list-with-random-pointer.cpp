@@ -31,7 +31,7 @@ public:
             mp[ptr] = new Node(ptr -> val);
             ptr = ptr -> next;
         }
-
+        
         ptr = head;
 
         while(ptr) {
