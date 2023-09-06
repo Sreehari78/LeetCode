@@ -4,7 +4,7 @@ public:
         
         string str = "", str1 = "";
         for(int i = 0; i < s.length(); i++)
-            if((s[i] - 'A' >= 0 && s[i] - 'A' <= 25) || (s[i] - 'a' >= 0 && s[i] - 'a' <= 25) || (s[i] - '0' >= 0 && s[i] - '0' <= 9)) str += tolower(s[i]);
+            if(isalnum(s[i])) str += tolower(s[i]);
         
         str1 = str;
         int n = str.length();
