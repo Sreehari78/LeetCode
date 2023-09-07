@@ -18,13 +18,12 @@ public:
         if(left == right) return head;
 
         ListNode* ptr1 = head;
-        for(int i = 1; i < left; i++) ptr1 = ptr1 -> next;
-
         ListNode* ptr2 = ptr1;
         vector<int> v;
 
-        for(int i = left; i <= right; i++) {
-            v.push_back(ptr2 -> val);
+        for(int i = 1; i <= right; i++) {
+            if(i < left) ptr1 = ptr1 -> next;
+            else v.push_back(ptr2 -> val);
             ptr2 = ptr2 -> next;
         }
 
