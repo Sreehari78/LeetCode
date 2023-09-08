@@ -4,10 +4,11 @@ public:
         
         int start = 0, end = nums.size() - 1, mid = (start + end) / 2, min = nums[0];
 
-        if(nums[start] <= nums[end]) return nums[0]; // check if the array is already sorted
+        if(nums[start] <= nums[end]) return nums[0];
 
         while(start <= end) {
             mid = (start + end) / 2;
+            
             if(nums[mid] < min) {
                 min = nums[mid];
                 end = mid - 1;
