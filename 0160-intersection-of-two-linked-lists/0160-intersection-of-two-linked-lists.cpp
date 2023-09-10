@@ -6,18 +6,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
- int init = []
-{
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    std::ofstream out("user.out");
-    return 0;
-}();
 
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-
+        
         unordered_map<ListNode*, int> mp;
         
         while(headA) {
