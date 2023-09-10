@@ -14,6 +14,7 @@ public:
         std::cout.tie(nullptr);
 
         unordered_map<ListNode*, int> mp;
+        
         while(headA) {
             mp[headA] = 1;
             headA = headA -> next;
