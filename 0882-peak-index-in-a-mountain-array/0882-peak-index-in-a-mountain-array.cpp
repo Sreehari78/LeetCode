@@ -7,7 +7,7 @@ public:
 
         if(arr.size() == 1) return arr[0];
 
-        int low = 0, high = arr.size() - 1, mid = 0, small = INT_MAX, index = -1;
+        int low = 0, high = arr.size() - 1, mid = 0;
 
         if(arr[low] > arr[low + 1]) return arr[low];
         if(arr[high] > arr[high - 1]) return arr[high];
