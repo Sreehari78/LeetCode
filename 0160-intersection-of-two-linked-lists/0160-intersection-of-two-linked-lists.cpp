@@ -13,14 +13,18 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        if(headA == NULL || headB == NULL) return NULL;
-        ListNode *a = headA;
-        ListNode *b = headB;
-        while(a != b){
-            a = (a == NULL) ? headB : a->next;
-            b = (b == NULL) ? headA : b->next;
+        unordered_map<ListNode*, int> mp;
+        
+        while(headA) {
+            mp[headA] = 1;
+            headA = headA -> next;
         }
 
-        return a;
+        while(headB) {
+            if(mp[headB] == 1) return headB;
+            headB = headB -> next;
+        }
+
+        return nullptr;
     }
 };
