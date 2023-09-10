@@ -7,7 +7,7 @@ public:
 
         if(nums.size() == 1) return 0;
 
-        int low = 0, high = nums.size() - 1, mid = 0, small = INT_MAX, index = -1;
+        int low = 0, high = nums.size() - 1, mid = 0;
 
         if(nums[low] > nums[low + 1]) return low;
         if(nums[high] > nums[high - 1]) return high;
