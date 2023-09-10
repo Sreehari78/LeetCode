@@ -10,7 +10,7 @@ public:
         while(start < end) {
             (height[start] > height[end]) ? ht = height[end] : ht = height[start];
 
-            if(area < ht * (end -  start)) area = ht * (end -  start);
+            if(area < ht * (end - start)) area = ht * (end - start);
 
             (height[start] > height[end]) ? end-- : start++;
         }
