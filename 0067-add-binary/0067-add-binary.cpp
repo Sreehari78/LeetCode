@@ -6,7 +6,7 @@ public:
         std::cout.tie(nullptr);
         
         int alen = a.length(), blen = b.length(), i = 0, carry = 0;
-        string ans ="";
+        string ans = "";
 
         while(i < alen || i < blen || carry != 0){
             int x = 0;
