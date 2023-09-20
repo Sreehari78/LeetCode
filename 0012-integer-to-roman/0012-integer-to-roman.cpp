@@ -3,7 +3,7 @@ public:
     string intToRoman(int num) {
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
-
+        
         string s = "";
         char ones, fives, tens;
         int pow = 1;
