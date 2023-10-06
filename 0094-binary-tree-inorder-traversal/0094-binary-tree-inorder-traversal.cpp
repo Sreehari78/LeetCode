@@ -12,17 +12,38 @@
 class Solution {
 public:
 
-    vector<int> v;
+    // vector<int> v;
 
-    void recursiveInorderTraversal(TreeNode* root) {
-        if(!root) return; 
-        inorderTraversal(root -> left);
-        v.push_back(root -> val);
-        inorderTraversal(root -> right);
-    }
+    // void recursiveInorderTraversal(TreeNode* root) {
+    //     if(!root) return; 
+    //     inorderTraversal(root -> left);
+    //     v.push_back(root -> val);
+    //     inorderTraversal(root -> right);
+    // }
 
     vector<int> inorderTraversal(TreeNode* root) {
-        recursiveInorderTraversal(root);
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
+        stack<TreeNode*> st;
+        TreeNode* node = root;
+        vector<int> v;
+
+        while(true) {
+            if(node) {
+                st.push(node);
+                node = node -> left;
+            }
+            else {
+                if(st.empty()) break;
+                node = st.top();
+                v.push_back(node -> val);
+                st.pop();
+                node = node -> right;
+            }
+        }
+ 
         return v;
     }
 };
