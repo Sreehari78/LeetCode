@@ -14,13 +14,13 @@ public:
         ios_base::sync_with_stdio(false);
         cin.tie(nullptr);
         cout.tie(nullptr);
-        
+
         ListNode* ptr = head;
 
         for(int i = 0; i < n; i++) ptr = ptr -> next;
 
         ListNode* ptr1 = head;
-        ListNode* prev = NULL;
+        ListNode* prev = nullptr;
 
         while(ptr) {
             prev = ptr1;
