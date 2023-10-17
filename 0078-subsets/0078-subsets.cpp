@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<vector<int>> res;
     vector<int> ans;
+
     void subsetReccursion(vector<int>& nums, int index) {
         if(index >= nums.size()) {
             res.push_back(ans);
