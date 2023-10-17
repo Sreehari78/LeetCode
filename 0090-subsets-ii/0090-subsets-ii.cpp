@@ -1,18 +1,20 @@
+
 class Solution {
 public:
+    vector<vector<int>> res;
     vector<int> ans;
-    set<vector<int>> s;
 
     void subsetReccursion(vector<int>& nums, int index) {
         if(index >= nums.size()) {
-            s.insert(ans);
+            res.push_back(ans);
             return;
         }
 
-        ans.push_back(nums[index]);
-        subsetReccursion(nums, ++index);
+        ans.push_back(nums[index]); 
+        subsetReccursion(nums, index + 1);
         ans.pop_back();
-        subsetReccursion(nums, index);
+        while(index + 1 < nums.size() && nums[index] == nums[index + 1]) index++;
+        subsetReccursion(nums, index + 1);
     }
 
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
@@ -22,7 +24,6 @@ public:
         
         sort(nums.begin(), nums.end());
         subsetReccursion(nums, 0);
-        vector<vector<int>> res(s.begin(), s.end());
         return res;
     }
 };
