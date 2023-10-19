@@ -4,9 +4,8 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
-        if (n == 0) return 1;
-        else if (n == 1) return 1;
+
+        if (n == 1) return 1;
         else if (n == 2) return 2;
         else {
             int fib1 = 1;
@@ -16,7 +15,8 @@ public:
                 fib1 = fib2;
                 fib2 = fib;
             }
-            return fib2;
+            
+        return fib2;
         }
     }
 };
