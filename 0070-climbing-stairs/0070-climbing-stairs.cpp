@@ -15,7 +15,6 @@ public:
                 fib1 = fib2;
                 fib2 = fib;
             }
-            
         return fib2;
         }
     }
