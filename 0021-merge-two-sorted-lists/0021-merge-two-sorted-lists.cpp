@@ -11,39 +11,37 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        if(list1 == nullptr) return list2;
-        if(list2 == nullptr) return list1;
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
 
-        ListNode* temp = new ListNode();
-        ListNode* list3 = temp;
+        ListNode* head = new ListNode();
+        ListNode* ptr = head;
 
-        while(list1 != nullptr && list2 != nullptr){
-            if(list1 -> val == list2 -> val){
-                temp -> next = new ListNode(list1 -> val);
-                temp = temp -> next;
-                temp -> next = new ListNode(list2 -> val);
-                temp = temp -> next;
+        while(list1 && list2) {
+            if(list1 -> val <= list2 -> val) {
+                ptr -> next = new ListNode(list1 -> val);
+                ptr = ptr -> next;
                 list1 = list1 -> next;
-                list2 = list2 -> next;
             }
-
-            else if(list1 -> val > list2 -> val){
-                temp -> next = new ListNode(list2 -> val);
-                temp = temp -> next;
+            else {
+                ptr -> next = new ListNode(list2 -> val);
+                ptr = ptr -> next;
                 list2 = list2 -> next;
-            }
-
-            else if(list1 -> val < list2 -> val){
-                temp -> next = new ListNode(list1 -> val);
-                temp = temp -> next;
-                list1 = list1 -> next;
             }
         }
 
-        if(list1 != nullptr) temp -> next = list1;
-        else if(list2 != nullptr) temp -> next = list2;
+        while(list1) {
+            ptr -> next = new ListNode(list1 -> val);
+            ptr = ptr -> next;
+            list1 = list1 -> next;
+        }
+        while(list2) {
+            ptr -> next = new ListNode(list2 -> val);
+            ptr = ptr -> next;
+            list2 = list2 -> next;
+        }
 
-        list3 = list3 -> next;
-        return list3;
+        return head -> next;
     }
 };
