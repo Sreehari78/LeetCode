@@ -27,12 +27,10 @@ public:
             ptr = ptr -> next;
             ptr1 = ptr1 -> next;
         }
-        if(prev && ptr1)
-            prev -> next = ptr1 -> next;
-        else if(!ptr1->next)
-            return NULL;
-        else if(!prev)
-            return head->next;
+
+        if(prev && ptr1) prev -> next = ptr1 -> next;
+        else if(!ptr1->next) return NULL;
+        else if(!prev) return head -> next;
 
         return head;
     }
