@@ -1,8 +1,10 @@
 class Solution {
 public:
-
     string longestPalindrome(string s) {
-
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         if(s.length() <= 1) return s;
         
         int n = s.length(), st = 0, end = 0, max_length = 0;
