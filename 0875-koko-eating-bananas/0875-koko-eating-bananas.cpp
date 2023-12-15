@@ -1,28 +1,32 @@
 class Solution {
 public:
-    long long timetaken(vector<int>& piles, int k)
-    {
-        long long ans=0;
-        for (int i=0; i<piles.size(); i++){
-            ans+= (piles[i]/k)+(piles[i]%k!=0);
-        }
-        return ans;
-    }
-    int minEatingSpeed(vector<int>& piles, int h)
-     {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        int low=1; int high= *max_element(piles.begin(),piles.end());
-        while (low <= high)
-        {
-            int mid= low+ (high-low)/2;
-            if (timetaken(piles,mid)<=h)
-            {
-                high= mid-1;
+    int minEatingSpeed(vector<int>& piles, int h) {
+        cout.tie(0);
+        cin.tie(0);
+        ios_base::sync_with_stdio(0);
+        
+        long long min_res = 0;
+        min_res = *max_element(piles.begin(), piles.end());
+        long long left = 1, right = min_res, per_hour;
+
+        while(left <= right){
+            per_hour = (left+right)/2;
+            long long hours_to_eat = 0;
+
+            for(int& val : piles){
+                if(val%per_hour==0)
+                    hours_to_eat += val/per_hour;            
+                else
+                hours_to_eat += val/per_hour+1;
+            }   
+
+            if(hours_to_eat <= h){
+                min_res = min(min_res,per_hour);
+                right = per_hour-1; 
             }
-            else low= mid+1;
+            else
+                left = per_hour+1;
         }
-        return low;
+        return min_res;
     }
 };
