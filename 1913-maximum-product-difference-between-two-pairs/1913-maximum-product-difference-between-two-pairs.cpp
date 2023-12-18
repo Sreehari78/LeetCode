@@ -11,19 +11,17 @@ public:
                 b = a;
                 a = it;
             }
-            else if(it > b) {
-                b = it;
-            }
-        }
-        for(auto it: nums) {
+            else b = max(it, b);
+            
             if(it < c){
                 d = c;
                 c = it;
             }
-            else if(it < d) {
-                d = it;
+            else {
+                d = min(it, d);
             }
         }
-    return a*b - c*d;
+
+        return a*b - c*d;
     }
 };
