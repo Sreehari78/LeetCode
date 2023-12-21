@@ -25,11 +25,11 @@ public:
             n++;
         }
 
-        k = n - (k % n);
+        k = k % n;
         if(k == 0) return head;
         ptr->next = head;
 
-        for(int i = 0; i < k; i++) ptr = ptr->next;
+        for(int i = 0; i < n - k; i++) ptr = ptr->next;
 
         head = ptr->next;
         ptr->next = nullptr;
