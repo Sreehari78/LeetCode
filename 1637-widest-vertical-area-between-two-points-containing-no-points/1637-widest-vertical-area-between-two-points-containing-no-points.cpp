@@ -5,6 +5,7 @@ public:
         cin.tie(NULL);
         cout.tie(NULL);
     }
+    
     int maxWidthOfVerticalArea(vector<vector<int>>& points) {
 
         int n = points.size(), diff = 0;
