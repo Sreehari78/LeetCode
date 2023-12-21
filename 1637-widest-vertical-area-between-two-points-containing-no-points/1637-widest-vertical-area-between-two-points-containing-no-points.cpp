@@ -1,7 +1,7 @@
 class Solution {
 public:
     int maxWidthOfVerticalArea(vector<vector<int>>& points) {
-        int start = 0, end = 1000000000 , n = points.size(), diff = 0;
+        int n = points.size(), diff = 0;
         vector<int> v;
 
         for(int i = 0; i < n; i++) v.push_back(points[i][0]);
