@@ -1,10 +1,12 @@
 class Solution {
 public:
+    Solution() {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+    }
     int maxWidthOfVerticalArea(vector<vector<int>>& points) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
+
         int n = points.size(), diff = 0;
         vector<int> v;
 
