@@ -10,8 +10,8 @@ public:
         int zeros = 0, ones = count(s.begin(), s.end(), '1'), score = 0, count = 0, n = s.length();
 
         for(int i = 0; i < n - 1; i++) {
-            zeros += (s[i] == '0');
-            ones -= (s[i] == '1');
+            if(s[i] == 0)zeros++;
+            else ones--;
             score = max(score, zeros + ones);
         }
         return score;
