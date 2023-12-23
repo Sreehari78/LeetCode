@@ -1,5 +1,11 @@
 class Solution {
 public:
+    Solution() {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+    }
+    
     bool isPathCrossing(string path) {
         unordered_set<string> visitedPoints;
         int currentX = 0, currentY = 0;
