@@ -3,7 +3,11 @@ private:
     int n;
 
 public:
-
+    Solution() {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+    }
 
     bool isPalindrome(int start, int end, string s) {
         while(start <= end) if(s[start++] != s[end--]) return false;
@@ -26,10 +30,6 @@ public:
     }
 
     vector<vector<string>> partition(string s) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-
         vector<vector<string>> res;
         vector<string> ans;
 
