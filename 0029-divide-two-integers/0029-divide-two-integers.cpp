@@ -16,12 +16,12 @@ public:
         
         if(dividend < 0) {
             flag1 = true;
-            dividend *= -1;
+            abs(dividend);
         }
         
         if(divisor < 0) {
             flag2 = true;
-            divisor *= -1;
+            abs(divisor);
         }
 
         while(dividend >= divisor) {
