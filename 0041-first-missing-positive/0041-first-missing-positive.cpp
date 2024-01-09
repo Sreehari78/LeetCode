@@ -1,5 +1,11 @@
 class Solution {
 public:
+    Solution() {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        cout.tie(NULL);
+    }
+    
     int firstMissingPositive(vector<int>& nums) {
         vector<bool> v(100000, false);
         for (auto it : nums)
