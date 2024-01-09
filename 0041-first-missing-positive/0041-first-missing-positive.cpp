@@ -8,11 +8,12 @@ public:
 
     int firstMissingPositive(vector<int>& nums) {
         vector<bool> v(100000, false);
+        int maxi = INT_MIN;
 
         for (auto it : nums) {
             if (it > 0 && it <= 100000)
                 v[it] = true;
-            // maxi = max(it, maxi);
+            maxi = max(it, maxi);
         }
 
         for (int i = 1; i <= nums.size(); i++)
