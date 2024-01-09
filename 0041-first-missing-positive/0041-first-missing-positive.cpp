@@ -22,17 +22,21 @@ public:
 
         // if(maxi < 0) return 1;
         // return ++maxi;
+        int id;
+        for (int i = 0; i < nums.size(); i++)
+            if (nums[i] <= 0 || nums[i] > nums.size())
+                nums[i] = nums.size() + 1;
+
+        for (int i = 0; i < nums.size(); i++) {
+            id = abs(nums[i]);
+            if(id > nums.size()) continue;
+            id--;
+            if(nums[id] > 0) nums[id] = -nums[id];
+        }
 
         for(int i = 0; i < nums.size(); i++)
-            if (nums[i] < 1)
-                nums[i] == 0;
-            
-        for(int i = 0; i < nums.size(); i++)
-            if(nums[i] > 0 && nums[i] < nums.size()) nums[nums[i]] *= -1;
-        
-        for(int i = 1; i < nums.size(); i++)
-            if(nums[i] > 0) return i;
+            if(nums[i] > 0) return i + 1;
 
-         return nums.size() + 1;
+        return nums.size() + 1;
     }
 };
