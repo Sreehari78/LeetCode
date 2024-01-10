@@ -1,11 +1,6 @@
+int speedUp = [] { ios::sync_with_stdio(0); cin.tie(0); return 0; }();
 class Solution {
 public:
-    Solution() {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
-        cout.tie(NULL);
-    }
-
     int firstMissingPositive(vector<int>& nums) {
         vector<bool> v(100000, false);
         int maxi = INT_MIN;
@@ -20,7 +15,8 @@ public:
             if (!v[i])
                 return i;
 
-        if(maxi < 0) return 1;
+        if (maxi < 0)
+            return 1;
         return ++maxi;
         // int id;
         // for (int i = 0; i < nums.size(); i++)
