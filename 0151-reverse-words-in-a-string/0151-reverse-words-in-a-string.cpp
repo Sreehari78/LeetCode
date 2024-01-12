@@ -3,6 +3,9 @@ int speedUp = [] { ios::sync_with_stdio(0); cin.tie(0); return 0; }();
 class Solution {
 public:
     string reverseWords(string s) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         stack<string> stk;
         
         s += ' ';
