@@ -16,10 +16,7 @@ public:
 
         for (int i = 1; i <= 3 && index + i <= s.length(); i++) {
             string ans = s.substr(index, i);
-            if ((ans[0] == '0' && ans.length() > 1) || (i == 3 && stoi(ans) >= 256)) {
-                // Skip substrings starting with '0' and substrings greater than or equal to 256
-                continue;
-            }
+            if ((ans[0] == '0' && ans.length() > 1) || (i == 3 && stoi(ans) >= 256)) continue;
 
             string newIp = ip.empty() ? ans : ip + '.' + ans;
             recursiveMethod(index + i, s, dots + 1, newIp);
