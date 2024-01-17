@@ -1,8 +1,5 @@
 int speedUp = [] { ios::sync_with_stdio(0); cin.tie(0); return 0; }();
 class Solution {
-private:
-    vector<string> results;
-
 public:
     string getPermutation(int n, int k) {
         vector<int> numbers;
