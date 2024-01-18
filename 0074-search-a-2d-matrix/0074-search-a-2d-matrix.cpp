@@ -1,6 +1,10 @@
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         int startRow = 0, endRow = matrix.size() - 1, startCol = 0, endCol = matrix[0].size() - 1;
 
         while(startRow <= endRow) {
