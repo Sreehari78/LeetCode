@@ -18,7 +18,7 @@ public:
             ans.pop_back();
         }
 
-        reccusriveMethod(++index, remainingTarget, candidates);
+        reccusriveMethod(index + 1, remainingTarget, candidates);
     }
 
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
