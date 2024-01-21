@@ -4,9 +4,7 @@ class Solution {
 public:
     unordered_map<int, int> memo;
     int reccursiveMethod(vector<int>& nums, int index) {
-        if(index >= nums.size()) {
-            return 0;
-        }
+        if(index >= nums.size()) return 0;
         
         if(memo.find(index) != memo.end()) return memo[index];
 
