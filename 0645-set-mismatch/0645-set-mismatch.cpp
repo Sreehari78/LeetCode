@@ -1,21 +1,15 @@
+int speedUp = [] { ios::sync_with_stdio(0); cin.tie(0); return 0; }();
+
 class Solution {
 public:
     vector<int> findErrorNums(vector<int>& nums) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        int repeated = 0, missing = (nums.size()*(nums.size() + 1)) / 2;
-        unordered_map<int, int> mp;
-        
-        for(int i = 0; i < nums.size(); i++) {
-            mp[nums[i]]++;
-            if(mp[nums[i]] > 1) {
-                repeated = nums[i];
-                continue;
-            }
-            missing -= nums[i];
+        vector<int> H(nums.size() + 1, 0);
+        H[0] = 1;
+        for (auto &v: nums) {
+            H[v]++;
         }
-
-        return {repeated, missing};
+        int d = max_element(H.begin(), H.end()) - H.begin();
+        int m = min_element(H.begin()+1, H.end()) - H.begin();
+        return {d, m};
     }
 };
