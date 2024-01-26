@@ -5,7 +5,7 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        vector<int> dp(n + 1, 0);
+        int dp[n + 1];
         if (n == 1) return 1;
         if (n == 2) return 2;
         
