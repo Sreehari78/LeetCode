@@ -5,18 +5,10 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        if (n == 1) return 1;
-        else if (n == 2) return 2;
-        else {
-            int fib1 = 1;
-            int fib2 = 2;
-            for (int i = 3; i <= n; ++i) {
-                int fib = fib1 + fib2;
-                fib1 = fib2;
-                fib2 = fib;
-            }
+        vector<int> dp(n + 1, 0);
+        dp[0] = 1, dp[1] = 1;
+        for(int i = 2; i <= n; i++) dp[i] = dp[i - 1] + dp[i - 2];
 
-        return fib2;
-        }
+        return dp[n];
     }
 };
