@@ -16,11 +16,9 @@ public:
             if (nums[mid] == target) {
                 result = mid;
                 end = mid - 1;
-            } else if (nums[mid] < target) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
+            } 
+            else if (nums[mid] < target) start = mid + 1;
+            else end = mid - 1;
         }
 
         return result;
@@ -35,11 +33,9 @@ public:
             if (nums[mid] == target) {
                 result = mid;
                 start = mid + 1;
-            } else if (nums[mid] < target) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
             }
+            else if (nums[mid] < target) start = mid + 1;
+            else end = mid - 1;
         }
 
         return result;
