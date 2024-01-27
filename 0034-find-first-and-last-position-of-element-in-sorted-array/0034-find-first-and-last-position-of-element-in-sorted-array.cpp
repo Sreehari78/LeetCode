@@ -1,10 +1,6 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
         int start = findFirstOccurrence(nums, target);
         int end = findLastOccurrence(nums, target);
 
