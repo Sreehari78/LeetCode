@@ -2,7 +2,7 @@
 
 class MyQueue {
 private:
-    std::stack<int> st1, st2;
+    stack<int> st1, st2;
 
 public:
     MyQueue() {}
