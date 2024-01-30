@@ -1,3 +1,10 @@
+static const auto _ = []() {
+  std::ios::sync_with_stdio(false);
+  std::cout.tie(nullptr);
+  std::cerr.tie(nullptr);
+  std::cin.tie(nullptr);
+  return nullptr;
+}();
 class Solution {
 public:
 
