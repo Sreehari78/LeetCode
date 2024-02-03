@@ -11,7 +11,6 @@ public:
         for(int i = 0; i < n; i++) dp[i][0] = true;
         dp[0][nums[0]] = true;
 
-
         for(int index = 1; index < n; index++)
             for(int target = 1; target <= k; target++) {
                 bool notTake = dp[index - 1][target];
