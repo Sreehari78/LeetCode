@@ -13,6 +13,7 @@ public:
     }
 
     bool canPartition(vector<int>& nums) {
+        
         int sum = 0, n = nums.size();
         for(int it: nums) sum += it;
         if(sum% 2 != 0) return false;
