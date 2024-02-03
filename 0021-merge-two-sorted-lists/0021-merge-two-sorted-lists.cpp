@@ -36,6 +36,7 @@ public:
             ptr = ptr -> next;
             list1 = list1 -> next;
         }
+        
         while(list2) {
             ptr -> next = new ListNode(list2 -> val);
             ptr = ptr -> next;
