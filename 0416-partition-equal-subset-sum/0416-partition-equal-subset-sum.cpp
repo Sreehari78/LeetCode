@@ -1,24 +1,23 @@
 class Solution {
 public:
-    bool memo(vector<int> &nums, int target, int index, vector<vector<int>> &dp) {
-        if (target == 0) return true;
-        if (index == 0) return nums[0] == target;
-        if (dp[index][target] != -1) return dp[index][target];
-
-        bool notTake = memo(nums, target, index - 1, dp);
-        bool take = false;
-        if (nums[index] <= target) take = memo(nums, target - nums[index], index - 1, dp);
-
-        return dp[index][target] = (take | notTake);
-    }
-
     bool canPartition(vector<int>& nums) {
         int sum = 0, n = nums.size();
         for(int it: nums) sum += it;
         if(sum% 2 != 0) return false;
         int k = sum / 2;
-        vector<vector<int>> dp(n + 1, vector<int>(k + 1, -1));
+        
+        vector<vector<bool>> dp(n, vector<bool>(k + 1, 0));
+        for(int i = 0; i < n; i++) dp[i][0] = true;
+        dp[0][nums[0]] = true;
 
-        return memo(nums, k, n - 1, dp);
+        for(int index = 1; index < n; index++)
+            for(int target = 1; target <= k; target++) {
+                bool notTake = dp[index - 1][target];
+                bool take = false;
+                if (nums[index] <= target) take = dp[index - 1][target - nums[index]];
+                dp[index][target] = (take | notTake);
+            }
+
+        return dp[n - 1][k];
     }
 };
