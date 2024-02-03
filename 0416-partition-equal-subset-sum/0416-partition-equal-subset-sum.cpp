@@ -13,6 +13,9 @@ public:
     }
 
     bool canPartition(vector<int>& nums) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         
         int sum = 0, n = nums.size();
         for(int it: nums) sum += it;
