@@ -1,16 +1,15 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        long z = 0, y = x;
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         
-        while(y != 0 && y > 0){
-            z *= 10;
-            z += y % 10;
-            y /= 10;
-        }
+        if(x < 0) return 0;
 
-        if(x == z) return true;
-
-        return false;
+        string str1 = to_string(x), str2 = to_string(x);
+        reverse(str1.begin(), str1.end());
+        if(str1 == str2) return 1;
+        return 0;
     }
 };
