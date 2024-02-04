@@ -1,7 +1,11 @@
 class Solution {
 public:
     vector<string> findRepeatedDnaSequences(string s) {
-        // if(s.length() < 10) return {};
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
+        if(s.length() < 10) return {};
 
         vector<string> result;
         unordered_map<string, int> mp;
