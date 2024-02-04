@@ -1,7 +1,7 @@
 class Solution {
 public:
     int equalPairs(vector<vector<int>>& grid) {
-        map<vector<int>,int, VectorHasher> mp;
+        map<vector<int>,int> mp;
         int result = 0;
 
         for(int i = 0; i < grid.size(); i++) mp[grid[i]]++;
