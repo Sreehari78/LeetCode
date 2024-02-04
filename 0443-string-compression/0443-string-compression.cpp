@@ -9,11 +9,8 @@ public:
             str += chars[left];
             while(right < n && chars[left] == chars[right]) right++;
             if(right - left > 1) str += to_string(right - left);
-            cout<<str<< " "<<right<<endl;
-
             left = right;
             right++;
-
         }
 
         for(int i = 0; i < str.length(); i++) chars[i] = str[i];
