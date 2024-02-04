@@ -1,6 +1,7 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
+        
         if(s.length() == 1) return 1;
 
         int left = 0, right = 0, n = s.length(), result = 0;
