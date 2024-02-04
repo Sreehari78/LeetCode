@@ -3,6 +3,7 @@ class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
         if(p.length() > s.length()) return {};
+        
         int left = 0, right = p.length() - 1, n = s.length();
         unordered_map<char, int> mp1, mp2;
         vector<int> result;
