@@ -4,8 +4,6 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
-        if(s.length() == 1) return 1;
 
         int left = 0, right = 0, n = s.length(), result = 0;
         unordered_map<char, int>mp;
