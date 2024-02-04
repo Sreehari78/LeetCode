@@ -1,10 +1,7 @@
+int speedUp = [] { ios::sync_with_stdio(0); cin.tie(0); return 0; }();
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
         int left = 0, right = p.length() - 1, n = s.length();
         unordered_map<char, int> mp1, mp2;
         vector<int> result;
@@ -13,6 +10,7 @@ public:
             mp1[i] = 0;
             mp2[i] = 0;
         }
+
         for(char it: p) mp1[it]++;
         for(int i = left; i <= right; i++) mp2[s[i]]++;
 
