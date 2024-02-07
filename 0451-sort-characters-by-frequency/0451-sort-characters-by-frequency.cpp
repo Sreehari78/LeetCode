@@ -1,17 +1,15 @@
+int speedUp = [] { ios::sync_with_stdio(0); cin.tie(0); return 0; }();
+
 class Solution {
 public:
     string frequencySort(string s) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
         unordered_map<char, int> mp;
         string str = "";
 
         for(char c: s) mp[c]++;
 
         vector<pair<char, int>> v(mp.begin(), mp.end());
-        sort(v.begin(), v.end(), [](const std::pair<int, int>& a, const std::pair<int, int>& b) {
+        sort(v.begin(), v.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
             return a.second > b.second;
         });
 
