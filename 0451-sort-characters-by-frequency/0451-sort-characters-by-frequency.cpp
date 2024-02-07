@@ -1,6 +1,10 @@
 class Solution {
 public:
     string frequencySort(string s) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         unordered_map<char, int> mp;
         string str = "";
 
