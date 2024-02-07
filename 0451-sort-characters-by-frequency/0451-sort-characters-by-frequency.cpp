@@ -12,9 +12,9 @@ public:
         });
 
         for(auto it: v)
-            for(int i = 0; i < it.second; i++)
+            while(it.second--)
                 str += it.first;
-                
+
         return str;
     }
 };
