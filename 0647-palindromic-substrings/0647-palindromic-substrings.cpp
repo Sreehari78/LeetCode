@@ -2,6 +2,7 @@ class Solution {
 public:
     int countSubstrings(string s) {
         
+        
         int result = 0;
 
         for(int i = 0; i < s.length(); i++) {
