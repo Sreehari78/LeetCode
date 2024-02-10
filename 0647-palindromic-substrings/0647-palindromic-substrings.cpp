@@ -1,7 +1,9 @@
 class Solution {
 public:
     int countSubstrings(string s) {
-        
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         
         int result = 0;
 
