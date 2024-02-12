@@ -7,9 +7,9 @@ public:
 
         unordered_map<int, int> mp;
 
-        for(auto it: nums) {
+        for (int it : nums) {
             mp[it]++;
-            if(mp[it] > nums.size() / 2) return it;
+            if (mp[it] > nums.size() / 2) return it;
         }
         return -1;
     }
