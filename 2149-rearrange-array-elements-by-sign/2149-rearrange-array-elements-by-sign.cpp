@@ -4,9 +4,13 @@ public:
         vector<int> positive, negative;
         int p = 0, n = 0;
 
-        for(int it: nums) if(it > 0) positive.push_back(it); else negative.push_back(it);
+        for(int it: nums) 
+            if(it > 0) positive.push_back(it); 
+            else negative.push_back(it);
 
-        for(int i = 0; i < nums.size(); i++) if(i % 2 == 0) nums[i] = positive[p++]; else nums[i] = negative[n++];
+        for(int i = 0; i < nums.size(); i++) 
+            if(i % 2 == 0) nums[i] = positive[p++]; 
+            else nums[i] = negative[n++];
 
         return nums;
     }
