@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
+        
         vector<int> positive, negative;
         int p = 0, n = 0;
 
