@@ -1,10 +1,10 @@
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(nullptr);
-        cout.tie(nullptr);
-
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         vector<int> positive, negative;
         int p = 0, n = 0;
 
