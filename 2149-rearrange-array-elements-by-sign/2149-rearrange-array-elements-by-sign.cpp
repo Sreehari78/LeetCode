@@ -4,7 +4,7 @@ public:
         ios_base::sync_with_stdio(false);
         cin.tie(nullptr);
         cout.tie(nullptr);
-        
+
         vector<int> positive, negative;
         int p = 0, n = 0;
 
