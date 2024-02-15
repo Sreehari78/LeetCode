@@ -1,6 +1,9 @@
 class Solution {
 public:
     long long largestPerimeter(vector<int>& nums) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         
         sort(nums.begin(), nums.end());
         long long n = nums.size(), perimeter = 0;
