@@ -4,6 +4,7 @@ static int speedup = []() {
     cout.tie(0);
     return 0;
 }();
+
 class Solution {
 public:
     int findLeastNumOfUniqueInts(vector<int>& arr, int k) {
