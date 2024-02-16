@@ -1,28 +1,29 @@
-
+static int speedup = []() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(0);
+	return 0;
+}();
 class Solution {
 public:
-    int findLeastNumOfUniqueInts(vector<int>& arr, int k) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
-        unordered_map<int, int> mp;
-        for (auto i : arr) mp[i]++;
+    int findLeastNumOfUniqueInts(vector<int>& arr, int k) 
+    {
+        unordered_map<int,int>mp; 
+        for(int it : arr) mp[it]++;
 
-        int n = mp.size(), j = 0;
-        vector<pair<int, int>> temp(mp.begin(), mp.end());
+        vector<int>freq;
+        for(auto it : mp) freq.push_back(it.second);
 
-        sort(temp.begin(), temp.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
-                return a.second < b.second;
-            });
+        sort(freq.begin(),freq.end());
 
-        while (k > 0) {
-            while (temp[j].second > 0 && k-- > 0) temp[j].second--;
-            if (temp[j].second == 0) {
-                j++;
-                n--;
-            }
-        }
-        return n;
+        int n = freq.size() - 1;
+        for(int i = 0; i <= n; i++)
+        {
+            k-= freq[i];               
+            if(k <= 0) break; 
+            
+        }   
+        if(k == 0) return(freq.size() - n); 
+        return(freq.size() - n + 1);
     }
 };
