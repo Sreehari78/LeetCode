@@ -1,6 +1,10 @@
 class Solution {
 public:      
     bool isValidSudoku(vector<vector<char>>& board) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         vector<unordered_set<char>> rows(9), cols(9), boxes(9);
 
         for(int i = 0; i < 9; i++)
