@@ -16,14 +16,15 @@ public:
 
         sort(freq.begin(),freq.end());
 
-        int n = freq.size() - 1;
-        for(int i = 0; i <= n; i++)
+        int i = 0;
+        for(; i < freq.size(); i++)
         {
             k-= freq[i];               
             if(k <= 0) break; 
             
         }   
-        if(k == 0) return(freq.size() - n); 
-        return(freq.size() - n + 1);
+
+        if(k == 0) return(freq.size() - i - 1); 
+        return(freq.size() - i);
     }
 };
