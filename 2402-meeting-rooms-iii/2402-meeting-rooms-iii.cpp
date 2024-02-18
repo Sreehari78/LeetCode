@@ -41,8 +41,6 @@ public:
         for (long long i = 0; i < n; i++)
             room.push(i);
 
-        // cout<<meet[0].start;
-
         for (long long i = meet[0].start; i < 3.3 * max_time; i++) {
             while (count < total_meetings && meet[count].start <= i &&
                    !room.empty()) {
