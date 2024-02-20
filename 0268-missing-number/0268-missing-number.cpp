@@ -1,15 +1,10 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
+        int n = nums.size(), sum = 0;
+        sum = (n * (n + 1)) / 2;
 
-        int sum=((nums.size()+1)*nums.size())/2, res = 0;
-        for(int i = 0; i < nums.size(); i++) {
-            res += nums[i];
-        }
-
-        return sum - res;
+        int ans = sum - accumulate(nums.begin(), nums.end(), 0);
+        return ans;
     }
 };
