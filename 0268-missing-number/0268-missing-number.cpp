@@ -4,7 +4,6 @@ public:
         int n = nums.size(), sum = 0;
         sum = (n * (n + 1)) / 2;
 
-        int ans = sum - accumulate(nums.begin(), nums.end(), 0);
-        return ans;
+        return sum - accumulate(nums.begin(), nums.end(), 0);
     }
 };
