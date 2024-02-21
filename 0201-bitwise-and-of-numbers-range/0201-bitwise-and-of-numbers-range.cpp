@@ -1,7 +1,11 @@
 class Solution {
 public:
     int rangeBitwiseAnd(int left, int right) {
-       int count = 0;
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+
+        int count = 0;
         while (left != right) {
             left >>= 1;
             right >>= 1;
