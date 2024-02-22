@@ -4,15 +4,11 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
+
+        vector<int> count(N + 1, 0);
         
-        unordered_map<int, int> mp1, mp2;
-
-        for (auto& t : trust) {
-            mp1[t[0]]++;
-            mp2[t[1]]++;
-        }
-
-        for (int i = 1; i <= n; i++) if (mp1[i] == 0 && mp2[i] == n - 1) return i;
+        for (auto& t : trust) count[t[0]]--, count[t[1]]++;
+        for (int i = 1; i <= N; ++i) if (count[i] == N - 1) return i;
 
         return -1;
     }
