@@ -1,6 +1,9 @@
 class Solution {
 public:
     int findJudge(int n, vector<vector<int>>& trust) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         
         unordered_map<int, int> mp1, mp2;
 
