@@ -1,6 +1,7 @@
 class Solution {
 public:
     int findJudge(int n, vector<vector<int>>& trust) {
+        
         unordered_map<int, int> mp1, mp2;
 
         for (auto& t : trust) {
