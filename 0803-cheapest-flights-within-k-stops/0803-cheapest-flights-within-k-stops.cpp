@@ -1,9 +1,13 @@
 class Solution {
 public:
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         vector<int> cost(n, INT_MAX);
         cost[src] = 0;
-        
+
         for(int i = 0; i < k + 1; i++) {
             vector<int> tempCost = cost;
             for(auto &it : flights) {
