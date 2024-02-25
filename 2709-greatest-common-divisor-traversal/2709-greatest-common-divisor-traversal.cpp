@@ -48,6 +48,10 @@ class Solution
     public:
         bool canTraverseAllPairs(vector<int> &v)
         {
+            std::ios_base::sync_with_stdio(false);
+            std::cin.tie(nullptr);
+            std::cout.tie(nullptr);
+            
             int x = 0;
             if(v.size()==1)
                 return true;
