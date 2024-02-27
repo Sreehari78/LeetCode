@@ -20,6 +20,10 @@ class Solution {
 
 public:
     int diameterOfBinaryTree(TreeNode* root) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         int diameter = 0;                            
         help(root, diameter);                       
         return diameter;                           
