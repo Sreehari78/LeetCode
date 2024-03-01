@@ -12,13 +12,13 @@ public:
 
         for(int i = 0; i < s.length(); i++) result += '0';
 
-        if(ones == 0) return result;
+        if(!ones) return result;
 
         result[result.length() - 1] = '1';
 
         int i = 0;
         while(--ones) result[i++] = '1';
-        
+
         return result;
     }
 };
