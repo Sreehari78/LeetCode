@@ -1,6 +1,7 @@
 class Solution {
 public:
     string maximumOddBinaryNumber(string s) {
+        
         int ones = 0;
         string result = "";
 
