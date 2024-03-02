@@ -6,7 +6,7 @@ public:
         std::cout.tie(nullptr);
 
         int n = nums.size();
-        int left = 0
+        int left = 0;
         int right = n - 1;
         vector<int> sorted(n, -1);
 
