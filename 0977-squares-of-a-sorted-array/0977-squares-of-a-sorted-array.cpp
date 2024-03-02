@@ -6,14 +6,16 @@ public:
         std::cout.tie(nullptr);
 
         int n = nums.size();
-        int left = 0, right = n - 1;
+        priority_queue<int, vector<int>, greater<>> pq;
         vector<int> sorted(n, -1);
 
-        for (int i = n - 1; i > -1; i--)
-            if (abs(nums[left]) >= abs(nums[right]))
-                sorted[i] = nums[left] * nums[left++];
-            else
-                sorted[i] = nums[right] * nums[right--];
+        for (int i = 0; i < n; i++) pq.push(nums[i] * nums[i]);
+        for (int i = 0; i < n; i++) {
+            sorted[i] = pq.top();
+            pq.pop();
+        }
+
+
 
         return sorted;
     }
