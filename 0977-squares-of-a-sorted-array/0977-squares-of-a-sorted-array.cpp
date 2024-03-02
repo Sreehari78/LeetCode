@@ -9,10 +9,12 @@ public:
         int left = 0, right = n - 1;
         vector<int> sorted(n, -1);
 
-        for(int i = n - 1; i > -1; i--)
-            if(abs(nums[left]) >= abs(nums[right])) sorted[i] = nums[left] * nums[left++];
-            else sorted[i] = nums[right] * nums[right--];
+        for (int i = n - 1; i > -1; i--)
+            if (abs(nums[left]) >= abs(nums[right]))
+                sorted[i] = nums[left] * nums[left++];
+            else
+                sorted[i] = nums[right] * nums[right--];
 
-       return sorted;
+        return sorted;
     }
 };
