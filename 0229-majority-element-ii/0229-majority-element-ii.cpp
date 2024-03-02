@@ -1,6 +1,9 @@
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         
         unordered_map<int, int> mp;
         vector<int> result;
