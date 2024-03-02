@@ -9,6 +9,10 @@ public:
     }
 
     vector<int> sortByBits(vector<int>& arr) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         sort(arr.begin(), arr.end(), comp);
         return arr;
     }
