@@ -11,9 +11,9 @@ public:
 
         for (int i = n - 1; i > -1; i--)
             if (abs(nums[left]) >= abs(nums[right]))
-                sorted[i] = pow(nums[left++], 2);
+                sorted[i] = nums[left] * nums[left++];
             else
-                sorted[i] = pow(nums[right--], 2);
+                sorted[i] = nums[right] * nums[right--];
 
         return sorted;
     }
