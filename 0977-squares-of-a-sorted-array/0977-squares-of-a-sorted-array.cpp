@@ -4,8 +4,9 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
-        int n = nums.size(), left = 0, right = nums.size() - 1;
+
+        int n = nums.size();
+        int left = 0, right = n - 1;
         vector<int> sorted(n, -1);
 
         for(int i = n - 1; i > -1; i--)
