@@ -17,20 +17,24 @@ public:
 
         ListNode* ptr = head;
 
-        for(int i = 0; i < n; i++) ptr = ptr -> next;
+        for (int i = 0; i < n; i++)
+            ptr = ptr->next;
 
         ListNode* ptr1 = head;
         ListNode* prev = nullptr;
 
-        while(ptr) {
+        while (ptr) {
             prev = ptr1;
-            ptr = ptr -> next;
-            ptr1 = ptr1 -> next;
+            ptr = ptr->next;
+            ptr1 = ptr1->next;
         }
 
-        if(prev && ptr1) prev -> next = ptr1 -> next;
-        else if(!ptr1->next) return NULL;
-        else if(!prev) return head -> next;
+        if (prev && ptr1)
+            prev->next = ptr1->next;
+        else if (!ptr1->next)
+            return NULL;
+        else if (!prev)
+            return head->next;
 
         return head;
     }
