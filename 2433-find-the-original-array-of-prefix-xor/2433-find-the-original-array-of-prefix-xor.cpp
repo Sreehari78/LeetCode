@@ -4,7 +4,7 @@ public:
         ios_base::sync_with_stdio(false);
         cin.tie(NULL);
         cout.tie(NULL);
-        
+
         int n = pref.size();
         vector<int> result;
         result.push_back(pref[0]);
