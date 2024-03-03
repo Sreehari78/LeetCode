@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<int> singleNumber(vector<int>& nums) {
+        
         unordered_map <int, int> mp;
         vector<int> result(2, 0);
         int i = 0;
