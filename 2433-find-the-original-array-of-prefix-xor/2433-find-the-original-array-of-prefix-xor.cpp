@@ -5,10 +5,10 @@ public:
         cin.tie(NULL);
         cout.tie(NULL);
 
-        int n = pref.size();
         vector<int> result;
         result.push_back(pref[0]);
-        for (int i = 1; i < n; i++)
+        
+        for (int i = 1; i < pref.size(); i++)
             result.push_back(pref[i - 1] ^ pref[i]);
 
         return result;
