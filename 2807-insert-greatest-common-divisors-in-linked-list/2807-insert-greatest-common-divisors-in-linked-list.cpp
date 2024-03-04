@@ -11,6 +11,10 @@
 class Solution {
 public:
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         ListNode* ptr = head;
         ListNode* ptr1 = ptr -> next;
         
