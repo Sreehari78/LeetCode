@@ -1,24 +1,22 @@
 class MyHashMap {
-private:
-    int v[1000001];
 public:
+    int data[1000001];
     MyHashMap() {
-        memset(v, -1, sizeof v);
+        memset(data, -1, sizeof data);
     }
     
     void put(int key, int value) {
-        v[key] = value;
+        data[key] = value;
     }
     
     int get(int key) {
-        return v[key];
+        return data[key];
     }
     
     void remove(int key) {
-        v[key] = -1;
+        data[key] = -1;
     }
 };
-
 /**
  * Your MyHashMap object will be instantiated and called as such:
  * MyHashMap* obj = new MyHashMap();
