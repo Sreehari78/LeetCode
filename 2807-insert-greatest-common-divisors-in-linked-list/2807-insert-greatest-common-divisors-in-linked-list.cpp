@@ -14,10 +14,10 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
+
         ListNode* ptr = head;
         ListNode* ptr1 = ptr -> next;
-        
+
         while(ptr1) {
             ptr -> next = new ListNode(__gcd(ptr -> val, ptr1 -> val), ptr1);
             ptr = ptr1;
