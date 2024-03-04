@@ -1,9 +1,9 @@
 class MyHashMap {
 private:
-    vector<int> v;
+    int v[1000001];
 public:
-    MyHashMap() : v(1000001, -1) {
-
+    MyHashMap() {
+        memset(v, -1, sizeof v);
     }
     
     void put(int key, int value) {
