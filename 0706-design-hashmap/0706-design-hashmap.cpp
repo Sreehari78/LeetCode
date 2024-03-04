@@ -7,18 +7,12 @@ public:
         std::cout.tie(nullptr);
         memset(data, -1, sizeof data);
     }
-    
-    void put(int key, int value) {
-        data[key] = value;
-    }
-    
-    int get(int key) {
-        return data[key];
-    }
-    
-    void remove(int key) {
-        data[key] = -1;
-    }
+
+    void put(int key, int value) { data[key] = value; }
+
+    int get(int key) { return data[key]; }
+
+    void remove(int key) { data[key] = -1; }
 };
 /**
  * Your MyHashMap object will be instantiated and called as such:
