@@ -2,6 +2,9 @@ class MyHashMap {
 public:
     int data[1000001];
     MyHashMap() {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         memset(data, -1, sizeof data);
     }
     
