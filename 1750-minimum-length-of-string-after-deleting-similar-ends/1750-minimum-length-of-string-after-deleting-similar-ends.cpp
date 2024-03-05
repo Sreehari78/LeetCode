@@ -1,8 +1,10 @@
 class Solution {
 public:
     int minimumLength(string s) {
-        ios_base::sync_with_stdio(0);
-        cin.tie(0);
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+
         int left = 0, right = s.length() - 1;
 
         while(left < right) {
