@@ -8,7 +8,7 @@
  */
 class Solution {
 public:
-    ListNode *detectCycle(ListNode *head) {
+    ListNode* detectCycle(ListNode* head) {
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
@@ -16,22 +16,21 @@ public:
         ListNode* hare = head;
         ListNode* tortise = head;
 
-        while(hare && hare -> next) {
-            tortise = tortise -> next;
-            hare = hare -> next -> next;
+        while (hare && hare->next) {
+            tortise = tortise->next;
+            hare = hare->next->next;
 
-            if(hare == tortise) {
+            if (hare == tortise) {
                 hare = head;
-        
-                while(hare != tortise) {
-                    hare = hare -> next;
-                    tortise = tortise -> next;
+
+                while (hare != tortise) {
+                    hare = hare->next;
+                    tortise = tortise->next;
                 }
                 return hare;
             }
         }
 
         return nullptr;
-
     }
 };
