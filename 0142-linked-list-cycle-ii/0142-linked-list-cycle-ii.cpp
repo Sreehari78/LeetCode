@@ -16,13 +16,10 @@ public:
         ListNode* hare = head;
         ListNode* tortise = head;
 
-        while(hare) {
+        while(hare && hare -> next) {
             tortise = tortise -> next;
-            hare = hare -> next;
+            hare = hare -> next -> next;
 
-            if(!hare || !hare -> next) break;
-
-            hare = hare -> next;
             if(hare == tortise) {
                 ListNode* hare = head;
         
