@@ -12,7 +12,7 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
+
         ListNode* hare = head;
         ListNode* tortise = head;
 
@@ -34,7 +34,5 @@ public:
         }
 
         return ptr;
-
-        return nullptr;
     }
 };
