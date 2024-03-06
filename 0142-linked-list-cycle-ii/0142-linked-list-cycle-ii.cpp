@@ -21,7 +21,7 @@ public:
             hare = hare -> next -> next;
 
             if(hare == tortise) {
-                ListNode* hare = head;
+                hare = head;
         
                 while(hare != tortise) {
                     hare = hare -> next;
