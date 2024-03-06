@@ -13,6 +13,7 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
+        if(!head) return false;
         ListNode *ptr1 = head;
         ListNode *ptr2 = head;
 
