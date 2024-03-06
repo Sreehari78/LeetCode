@@ -20,19 +20,21 @@ public:
             tortise = tortise -> next;
             hare = hare -> next;
 
-            if(!hare || !hare -> next) return nullptr;
+            if(!hare || !hare -> next) break;
 
             hare = hare -> next;
-            if(hare == tortise) break;
-        }
-
-        ListNode* ptr = head;
+            if(hare == tortise) {
+                ListNode* hare = head;
         
-        while(ptr != tortise) {
-            ptr = ptr -> next;
-            tortise = tortise -> next;
+                while(hare != tortise) {
+                    hare = hare -> next;
+                    tortise = tortise -> next;
+                }
+                return hare;
+            }
         }
 
-        return ptr;
+        return nullptr;
+
     }
 };
