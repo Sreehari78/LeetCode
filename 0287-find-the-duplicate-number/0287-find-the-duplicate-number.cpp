@@ -4,7 +4,7 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
+
         int fast = 0, slow = 0;
 
         do {
@@ -14,7 +14,7 @@ public:
 
         fast = 0;
 
-        while(fast != slow) {
+        while (fast != slow) {
             fast = nums[fast];
             slow = nums[slow];
         }
