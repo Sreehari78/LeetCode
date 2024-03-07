@@ -11,8 +11,11 @@
 class Solution {
 public:
     int pairSum(ListNode* head) {
-        vector<int> nums;
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
 
+        vector<int> nums;
         ListNode* ptr = head;
 
         while(ptr) {
