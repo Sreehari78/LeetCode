@@ -20,8 +20,9 @@ public:
             ptr = ptr -> next;
         }
 
-        int result = 0;
-        for(int i = 0; i < nums.size(); i++) result = max(result, nums[i] + nums[nums.size() - 1 - i]);
+        int result = 0, left = 0, right = nums.size() - 1;
+        
+        while(left < right) result = max(result, nums[left++] + nums[right--]);
 
         return result;
     }
