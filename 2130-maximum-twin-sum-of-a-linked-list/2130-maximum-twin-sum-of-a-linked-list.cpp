@@ -18,14 +18,15 @@ public:
         vector<int> nums;
         ListNode* ptr = head;
 
-        while(ptr) {
-            nums.push_back(ptr -> val);
-            ptr = ptr -> next;
+        while (ptr) {
+            nums.push_back(ptr->val);
+            ptr = ptr->next;
         }
 
         int result = 0, left = 0, right = nums.size() - 1;
-        
-        while(left < right) result = max(result, nums[left++] + nums[right--]);
+
+        while (left < right)
+            result = max(result, nums[left++] + nums[right--]);
 
         return result;
     }
