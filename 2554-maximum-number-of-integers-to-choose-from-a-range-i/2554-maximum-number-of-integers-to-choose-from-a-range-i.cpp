@@ -1,3 +1,5 @@
+static int speedup = []() { ios::sync_with_stdio(false); cin.tie(nullptr); return 0; }();
+
 class Solution {
 public:
     int maxCount(vector<int>& banned, int n, int maxSum) {
