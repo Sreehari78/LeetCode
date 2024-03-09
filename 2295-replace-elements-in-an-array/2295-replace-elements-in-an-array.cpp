@@ -1,11 +1,12 @@
+const int ZERO = []() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    return 0;
+}();
+
 class Solution {
 public:
-    vector<int> arrayChange(vector<int>& nums,
-                            vector<vector<int>>& operations) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-
+    vector<int> arrayChange(vector<int>& nums, vector<vector<int>>& operations) {
         unordered_map<int, int> mp;
 
         for (int i = 0; i < nums.size(); i++)
