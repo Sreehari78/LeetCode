@@ -11,10 +11,8 @@
 class Solution {
 public:
     ListNode* removeZeroSumSublists(ListNode* head) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
+
+
         deque<int> dq;
         ListNode* temp = head;
         set<long long> st;
