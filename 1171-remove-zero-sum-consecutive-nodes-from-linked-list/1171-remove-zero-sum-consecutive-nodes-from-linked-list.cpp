@@ -11,31 +11,39 @@
 class Solution {
 public:
     ListNode* removeZeroSumSublists(ListNode* head) {
-        int prefixSum = 0;
-        unordered_map<int,ListNode*>mp;
-        ListNode *dummy = new ListNode(0);
-        dummy->next = head;
-        mp[0] = dummy;
-        while(head != NULL){
-            prefixSum += head->val;
-            if(mp.find(prefixSum) != mp.end()){
-                //delete the node
-                ListNode *start = mp[prefixSum];
-                ListNode *temp = start;
-                int pSum = prefixSum;
-                while(temp != head){
-                    temp = temp->next;
-                    pSum += temp->val;
-                    if(temp != head)
-                        mp.erase(pSum);
+        deque<int> dq;
+        ListNode* temp = head;
+        set<long long> st;
+        st.insert(0);
+        long long sum = 0;
+        while (temp != NULL) {
+            dq.push_back(temp->val);
+            sum = sum + temp->val;
+            temp = temp->next;
+            if (st.find(sum) != st.end()) {
+                long long int val = sum;
+                while (!dq.empty()) {
+                    st.erase(sum);
+                    sum -= dq.back();
+                    dq.pop_back();
+                    if (sum == val)
+                        break;
                 }
-                start->next = head->next;
             }
-            else{
-                mp[prefixSum] = head;
-            }
-            head = head->next;
+            st.insert(sum);
         }
-        return dummy->next;
+        ListNode* nhead = NULL;
+        ListNode* mover = NULL;
+        while (!dq.empty()) {
+            if (nhead == NULL) {
+                nhead = new ListNode(dq.front());
+                mover = nhead;
+            } else {
+                mover->next = new ListNode(dq.front());
+                mover = mover->next;
+            }
+            dq.pop_front();
+        }
+        return nhead;
     }
 };
