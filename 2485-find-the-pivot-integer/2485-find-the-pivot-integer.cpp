@@ -5,25 +5,16 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        if (n == 1)
-            return 1;
+        if(n == 1) return 1;
 
-        unordered_map<int, pair<int, int>> mp;
-        int left = 1, right = n, sum = 0;
+        int start = 1, end = n, sum = n*(n+1)/2;
 
-        for (int x = 1; x <= n; x++) {
-            sum += x;
-            mp[x].first = sum;
+        while(start < end) {
+            int mid = (start + end) / 2, midSum = mid*(mid + 1) / 2;
+            if (midSum == sum - midSum + mid) return mid;
+            else if (midSum < sum - midSum + mid) start = mid + 1;
+            else end = mid - 1;
         }
-        sum = 0;
-        for (int x = n; x > 0; x--) {
-            sum += x;
-            mp[x].second = sum;
-        }
-
-        for (auto it : mp)
-            if (it.second.first == it.second.second)
-                return it.first;
 
         return -1;
     }
