@@ -3,7 +3,7 @@ auto speedUp = []() {
     cin.tie(nullptr);
     cout.tie(nullptr);
     return 0;
-}()
+}();
 
 class Solution {
 public:
