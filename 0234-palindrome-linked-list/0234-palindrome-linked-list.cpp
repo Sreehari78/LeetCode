@@ -19,17 +19,15 @@ public:
             temp=temp->next;
         }
         temp=head;
-while (temp != NULL) {
-    if (!st.empty() && st.top() == temp->val) {
-        st.pop(); // Remove the top element from the stack
-        temp = temp->next;
-    } else {
-        return false; // If elements don't match, it's not a palindrome
-    }
+      while (temp != NULL) {
+           if (!st.empty() && st.top() == temp->val) {
+                st.pop(); // Remove the top element from the stack
+                temp = temp->next;
+           } else {
+                 return false; // If elements don't match, it's not a palindrome
+                  }
 }
 // If the loop completes without returning false, it's a palindrome
-return true;
-
-        
+return true;     
     }
 };
