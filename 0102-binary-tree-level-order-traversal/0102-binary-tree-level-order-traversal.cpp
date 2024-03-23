@@ -13,10 +13,6 @@
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
         vector<vector<int>> result;
         queue<TreeNode*> q;
 
@@ -25,7 +21,7 @@ public:
         q.push(root);
 
         while (!q.empty()) {
-            
+
             vector<int> level;
             int n = q.size();
 
@@ -37,10 +33,10 @@ public:
                     q.push(node->left);
                 if (node->right)
                     q.push(node->right);
-                
-                level.push_back(node -> val);
+
+                level.push_back(node->val);
             }
-            
+
             result.push_back(level);
         }
 
