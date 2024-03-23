@@ -13,6 +13,9 @@
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         vector<vector<int>> result;
         queue<TreeNode*> q;
 
@@ -24,7 +27,7 @@ public:
             
             vector<int> level;
             int n = q.size();
-            
+
             for (int i = 0; i < n; i++) {
                 TreeNode* node = q.front();
                 q.pop();
