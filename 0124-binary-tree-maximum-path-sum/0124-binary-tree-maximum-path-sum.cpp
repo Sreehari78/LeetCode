@@ -6,26 +6,24 @@
  *     TreeNode *right;
  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
- * right(right) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
 class Solution {
 public:
-    int maxi = INT_MIN;
-    int height(TreeNode * root) {
-        if (!root)
-            return 0;
+    int maxSum = 0;
+    int height(TreeNode* root) {
+        if(!root) return 0;
 
-        int leftSum = max(0, height(root->left));
-        int rightSum = max(0, height(root->right));
+        int leftSum = max(0, height(root -> left));
+        int rightSum = max(0, height(root -> right));
 
-        maxi = max(maxi, leftSum + rightSum + root->val);
-        return root->val + max(leftSum, rightSum);
+        maxSum = max(maxSum, root -> val + leftSum + rightSum);
+        return max(leftSum, rightSum) + root -> val;
     }
 
     int maxPathSum(TreeNode* root) {
         height(root);
-        return maxi;
+        return maxSum;
     }
 };
