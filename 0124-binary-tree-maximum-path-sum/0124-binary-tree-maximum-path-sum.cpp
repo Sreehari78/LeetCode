@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    int maxSum = 0;
+    int maxSum = INT_MIN;
     int height(TreeNode* root) {
         if(!root) return 0;
 
