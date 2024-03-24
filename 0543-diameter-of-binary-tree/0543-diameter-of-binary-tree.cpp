@@ -1,4 +1,4 @@
-/*
+/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -6,26 +6,28 @@
  *     TreeNode *right;
  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+ * right(right) {}
  * };
  */
 class Solution {
-    int help(TreeNode* root, int& diameter) {
-        if (root == NULL) return 0;                         
-        int left = help(root->left, diameter);             
-        int right = help(root->right, diameter);          
-        diameter = max(diameter, left + right);   
-        return max(left, right) + 1;
+private:
+    int diameter = 0;
+
+    int maxHeight(TreeNode* root) {
+        if (!root)
+            return 0;
+
+        int lh = maxHeight(root->left);
+        int rh = maxHeight(root->right);
+
+        diameter = max(lh + rh, diameter);
+        return 1 + max(lh, rh);
     }
 
 public:
     int diameterOfBinaryTree(TreeNode* root) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
-        int diameter = 0;                            
-        help(root, diameter);                       
-        return diameter;                           
+        maxHeight(root);
+        return diameter;
     }
 };
