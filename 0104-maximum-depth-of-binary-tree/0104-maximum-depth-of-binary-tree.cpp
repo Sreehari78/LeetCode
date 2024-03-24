@@ -13,32 +13,11 @@
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
+        if(!root) return 0;
 
-        queue<TreeNode*> q;
-        int depth = 0;
+        int lh = maxDepth(root -> left);
+        int rh = maxDepth(root -> right);
 
-        if (!root)
-            return 0;
-        q.push(root);
-
-        while (!q.empty()) {
-            int n = q.size();
-
-            for (int i = 0; i < n; i++) {
-                root = q.front();
-                q.pop();
-
-                if (root->left)
-                    q.push(root->left);
-                if (root->right)
-                    q.push(root->right);
-            }
-            depth++;
-        }
-
-        return depth;
+        return 1 + max(lh, rh);
     }
 };
