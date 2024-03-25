@@ -6,10 +6,10 @@ public:
         std::cout.tie(nullptr);
         vector<int> result;
 
-        for (int i = 0; i < nums.size(); i++) {
-            int x = abs(nums[i]) - 1;
+        for (int it : nums) {
+            int x = abs(it) - 1;
             if (nums[x] < 0)
-                result.push_back(abs(nums[i]));
+                result.push_back(abs(it));
             else
                 nums[x] *= -1;
         }
