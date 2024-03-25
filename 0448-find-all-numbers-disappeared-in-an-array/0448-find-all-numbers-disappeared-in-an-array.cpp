@@ -7,7 +7,7 @@ public:
 
         vector<int> result;
 
-        for (int it: nums) {
+        for (int it : nums) {
             int x = abs(it);
             if (nums[x - 1] > 0)
                 nums[x - 1] *= -1;
