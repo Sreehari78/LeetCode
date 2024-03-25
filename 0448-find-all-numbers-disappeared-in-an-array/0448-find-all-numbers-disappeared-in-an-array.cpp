@@ -4,11 +4,11 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
+
         vector<int> result;
 
-        for (int i = 0; i < nums.size(); i++) {
-            int x = abs(nums[i]);
+        for (int it: nums) {
+            int x = abs(it);
             if (nums[x - 1] > 0)
                 nums[x - 1] *= -1;
         }
