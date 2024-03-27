@@ -4,7 +4,7 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
+
         if (k <= 1)
             return 0;
 
@@ -12,10 +12,9 @@ public:
 
         for (int right = 0; right < nums.size(); right++) {
             product *= nums[right];
-            while (product >= k) {
-                product /= nums[left];
-                left++;
-            }
+            while (product >= k)
+                product /= nums[left++];
+
             count += right - left + 1;
         }
 
