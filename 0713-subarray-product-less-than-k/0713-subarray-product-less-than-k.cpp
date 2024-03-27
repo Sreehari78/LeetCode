@@ -12,6 +12,7 @@ public:
 
         for (int right = 0; right < nums.size(); right++) {
             product *= nums[right];
+
             while (product >= k)
                 product /= nums[left++];
 
