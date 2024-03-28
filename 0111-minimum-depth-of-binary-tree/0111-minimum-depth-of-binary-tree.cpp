@@ -20,6 +20,7 @@
 class Solution {
 public:
     int minDepth(TreeNode* root) {
+        
 
         int depth = 1;
         queue<TreeNode*> q;
