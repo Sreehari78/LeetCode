@@ -30,7 +30,7 @@ public:
                 level.push_back(root->val);
 
                 if (!root->left && !root->right)
-                    return res;
+                    return levelorder.size() + 1;
                 if (root->left)
                     q.push(root->left);
                 if (root->right)
