@@ -20,9 +20,6 @@
 class Solution {
 public:
     int minDepth(TreeNode* root) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
 
         int depth = 1;
         queue<TreeNode*> q;
