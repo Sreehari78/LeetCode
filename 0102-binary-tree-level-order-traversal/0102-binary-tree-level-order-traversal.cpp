@@ -26,15 +26,15 @@ public:
             int n = q.size();
 
             for (int i = 0; i < n; i++) {
-                TreeNode* node = q.front();
+                root = q.front();
                 q.pop();
 
-                if (node->left)
-                    q.push(node->left);
-                if (node->right)
-                    q.push(node->right);
+                if (root->left)
+                    q.push(root->left);
+                if (root->right)
+                    q.push(root->right);
 
-                level.push_back(node->val);
+                level.push_back(root->val);
             }
 
             result.push_back(level);
