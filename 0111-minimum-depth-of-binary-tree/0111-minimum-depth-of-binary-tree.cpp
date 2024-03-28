@@ -16,7 +16,7 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
+
         int depth = 1;
         queue<TreeNode*> q;
 
@@ -25,13 +25,11 @@ public:
         q.push(root);
 
         while (!q.empty()) {
-            vector<int> level;
             int n = q.size();
 
             for (int i = 0; i < n; i++) {
                 root = q.front();
                 q.pop();
-                level.push_back(root->val);
 
                 if (!root->left && !root->right)
                     return depth;
