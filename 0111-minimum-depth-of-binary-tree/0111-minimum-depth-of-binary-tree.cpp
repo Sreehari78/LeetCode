@@ -13,7 +13,11 @@
 class Solution {
 public:
     int minDepth(TreeNode* root) {
-        vector<vector<int>> levelorder;
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
+        int depth = 1;
         queue<TreeNode*> q;
 
         if (!root)
@@ -30,16 +34,16 @@ public:
                 level.push_back(root->val);
 
                 if (!root->left && !root->right)
-                    return levelorder.size() + 1;
+                    return depth;
                 if (root->left)
                     q.push(root->left);
                 if (root->right)
                     q.push(root->right);
             }
 
-            levelorder.push_back(level);
+            depth++;
         }
 
-        return levelorder.size();
+        return depth;
     }
 };
