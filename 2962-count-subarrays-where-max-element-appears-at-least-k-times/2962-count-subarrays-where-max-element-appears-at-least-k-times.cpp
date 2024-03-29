@@ -14,13 +14,11 @@ public:
         long long left = 0, n = nums.size(), maxi = *max_element(nums.begin(), nums.end()), count = 0, ans = 0;
 
         for(int right = 0; right < n; right++) {
-            if(nums[right] == maxi)
-                count++;
+            count += (nums[right] == maxi);
 
             while(count >= k)
-                if(nums[left++] == maxi)
-                    count--;
-            
+                count -= (nums[left++] == maxi);
+
             ans += left;
             
         }
