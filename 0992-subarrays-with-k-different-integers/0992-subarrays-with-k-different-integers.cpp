@@ -1,6 +1,10 @@
 class Solution {
 public:
     int subarraysWithKDistinct(vector<int>& nums, int k) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         int sub_with_max_element_k = subarray_with_atmost_k(nums, k);
         int reduced_sub_with_max_k = subarray_with_atmost_k(nums, k - 1);
         return (sub_with_max_element_k - reduced_sub_with_max_k);
