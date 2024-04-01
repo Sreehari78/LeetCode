@@ -6,7 +6,8 @@ public:
         {
             if(s[i] == ' ' && count == 0) continue;
             if(s[i] == ' ' && count != 0) break;
-            if(s[i] != ' ') count++;   
+            if(s[i] != ' ') count++;
+            
         }
         return count;
     }
