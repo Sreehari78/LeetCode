@@ -1,6 +1,9 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         
         if (s.length() != t.length())
             return false;
