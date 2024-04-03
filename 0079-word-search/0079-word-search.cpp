@@ -1,5 +1,5 @@
 class Solution {
-public:
+private:
     bool backtrack(vector<vector<char>>& board, const string& word, int index, int row, int col) {
         if (index == word.length())
             return true;
@@ -19,6 +19,7 @@ public:
         return found;
     }
 
+public:
     bool exist(vector<vector<char>>& board, string word) {
         if (board.empty() || board[0].empty() || word.empty())
             return false;
