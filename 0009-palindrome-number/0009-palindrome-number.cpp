@@ -9,8 +9,7 @@ public:
         unsigned int res = 0, y = x;
         
         while(y) {
-            res *= 10;
-            res += y % 10;
+            res = res * 10 + y % 10;
             y /= 10;
         }
 
