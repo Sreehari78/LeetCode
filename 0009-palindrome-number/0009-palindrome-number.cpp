@@ -6,7 +6,7 @@ public:
         std::cout.tie(nullptr);
 
         if(x < 0) return false;
-        long res = 0, y = x;
+        unsigned int res = 0, y = x;
         
         while(y) {
             res *= 10;
