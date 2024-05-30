@@ -1,17 +1,10 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-       int start=0;
-       int end=s.size()-1;
-       while(start<=end){
-           if(!isalnum(s[start])){start++; continue;}
-           if(!isalnum(s[end])){end--;continue;}
-           if(tolower(s[start])!=tolower(s[end]))return false;
-           else{
-               start++;
-               end--;
-           }
-       }
-       return true;
-}
+        string s1 = "", s2 = "";
+        for(char it: s) if(isalpha(it) || isdigit(it)) s1 += tolower(it);
+        s2 = s1;
+        reverse(s1.begin(), s1.end());
+        return s2 == s1;
+    }
 };
