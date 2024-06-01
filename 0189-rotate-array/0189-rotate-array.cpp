@@ -1,6 +1,9 @@
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         if(nums.size() == 1 || k % nums.size() == 0) return;
 
         k %= nums.size();
