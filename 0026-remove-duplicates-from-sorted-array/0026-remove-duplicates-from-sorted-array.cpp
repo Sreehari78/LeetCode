@@ -1,6 +1,9 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         if (nums.size() == 0) return 0;
         
         int res = 1;
