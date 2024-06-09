@@ -1,6 +1,10 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         vector<int> res;
         int i = 0, j = 0, count = 0;
 
