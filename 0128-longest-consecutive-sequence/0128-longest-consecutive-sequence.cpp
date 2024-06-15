@@ -20,7 +20,7 @@ public:
         // return res;
         if(nums.size() == 0) return 0;
         sort(nums.begin(), nums.end());
-        int lastSmall = nums[0], count = 1, res = 0;
+        int lastSmall = nums[0], count = 1, res = 1;
 
         for (int i = 1; i < nums.size(); i++) {
             if (lastSmall + 1 == nums[i])
