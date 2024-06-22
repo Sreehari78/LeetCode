@@ -4,17 +4,46 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-
-        vector<int> output;
-        int right = 1, n = nums.size();
-        output.push_back(1);
         
-        for (int i = 1; i <= n; i++) output.push_back(output[i - 1] * nums[i - 1]);
-        for (int i = n - 1; i >= 0; i--) {
-            output[i] *= right;
-            right *= nums[i];
-        }
-        output.pop_back();
-        return output;
+        int product = 1;
+        bool hasZero = false, hasNonZero = false, hasOverOneZero = false;
+        vector<int> res;
+
+        for (int num : nums)
+            if (num) {
+                hasNonZero = true;
+                break;
+            }
+
+        if (!hasNonZero)
+            return nums;
+
+        for (int num : nums)
+            if (num)
+                product *= num;
+            else if (hasZero)
+                hasOverOneZero = true;
+            else
+                hasZero = true;
+
+        if (hasOverOneZero)
+            for (int num : nums)
+                res.push_back(0);
+
+        else if (hasZero)
+            for (int num : nums)
+                if (num)
+                    res.push_back(0);
+                else
+                    res.push_back(product);
+                    
+        else
+            for (int num : nums)
+                if (num)
+                    res.push_back(product / num);
+                else
+                    res.push_back(product);
+
+        return res;
     }
 };
