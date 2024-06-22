@@ -5,16 +5,23 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
         
-        std::unordered_map<string, vector<string>> mapping;
-        for (const auto& str : strs) {
-            string new_str = str;
-            sort(new_str.begin(), new_str.end());
-            mapping[new_str].push_back(str);
+        vector<string> temp = strs;
+        unordered_map<string, vector<int>> mp;
+        vector<vector<string>> res;
+
+        for (int i = 0; i < temp.size(); i++)
+            sort(temp[i].begin(), temp[i].end());
+        for (int i = 0; i < temp.size(); i++)
+            mp[temp[i]].push_back(i);
+
+        for (auto it : mp) {
+            vector<string> ans;
+            for (int it1 : it.second)
+                ans.push_back(strs[it1]);
+            
+            res.push_back(ans);
         }
-        vector<vector<string>> ans;
-        for (const auto& entry : mapping) {
-            ans.push_back(entry.second);
-        }
-        return ans;
+
+        return res;
     }
 };
