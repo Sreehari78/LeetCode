@@ -11,19 +11,21 @@
 class Solution {
 public:
     ListNode* deleteMiddle(ListNode* head) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
+        if(!head -> next) return nullptr;
 
-        ListNode* ptr = head;
-        int count = 0;
+        ListNode* hare = head;
+        ListNode* tortise = head;
 
-        for(count = 0; ptr; count++) ptr = ptr -> next;
-        if(count == 1) return nullptr;        
-        ptr  = head;
+        while(hare && hare -> next) {
+            hare = hare -> next -> next;
+            tortise = tortise -> next;
+        }
 
-        for(int i = 0; i < ceil(count / 2) - 1; i++) ptr = ptr -> next;
-        ptr->next = ptr->next->next;
+        hare = head;
+        while(hare -> next != tortise) hare = hare -> next;
+
+        hare -> next = tortise -> next;
+        tortise -> next = nullptr;
 
         return head;
     }
