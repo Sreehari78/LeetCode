@@ -1,27 +1,18 @@
 class Solution {
-public:
-    vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
-        vector<string> temp = strs;
-        unordered_map<string, vector<int>> mp;
-        vector<vector<string>> res;
+ public:
+  vector<vector<string>> groupAnagrams(vector<string>& strs) {
+    vector<vector<string>> ans;
+    unordered_map<string, vector<string>> keyToAnagrams;
 
-        for (int i = 0; i < temp.size(); i++)
-            sort(temp[i].begin(), temp[i].end());
-        for (int i = 0; i < temp.size(); i++)
-            mp[temp[i]].push_back(i);
-
-        for (auto it : mp) {
-            vector<string> ans;
-            for (int it1 : it.second)
-                ans.push_back(strs[it1]);
-            
-            res.push_back(ans);
-        }
-
-        return res;
+    for (const string& str : strs) {
+      string key = str;
+      ranges::sort(key);
+      keyToAnagrams[key].push_back(str);
     }
+
+    for (const auto& [_, anagrams] : keyToAnagrams)
+      ans.push_back(anagrams);
+
+    return ans;
+  }
 };
