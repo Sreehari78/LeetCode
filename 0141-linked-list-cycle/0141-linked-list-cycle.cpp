@@ -9,18 +9,13 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
+        ListNode* hare = head;
+        ListNode* tortise = head;
 
-        if(!head) return false;
-        ListNode *ptr1 = head;
-        ListNode *ptr2 = head;
-
-        while(ptr2 && ptr2 -> next) {
-            ptr1 = ptr1 -> next;
-            ptr2 = ptr2 -> next -> next;
-            if(ptr1 == ptr2) return true;
+        while(hare && hare -> next) {
+            hare = hare -> next -> next;
+            tortise = tortise -> next;
+            if(hare == tortise) return true;
         }
 
         return false;
