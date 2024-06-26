@@ -11,31 +11,18 @@
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-
-        ListNode* ptr = head;
-
-        for (int i = 0; i < n; i++)
-            ptr = ptr->next;
-
         ListNode* ptr1 = head;
-        ListNode* prev = nullptr;
+        ListNode* ptr2 = head;
 
-        while (ptr) {
-            prev = ptr1;
-            ptr = ptr->next;
-            ptr1 = ptr1->next;
+        while(n--) ptr1 = ptr1 -> next;
+        if(!ptr1) return head -> next;
+        
+        while(ptr1 -> next) {
+            ptr1 = ptr1 -> next;
+            ptr2 = ptr2 -> next;
         }
-
-        if (prev && ptr1)
-            prev->next = ptr1->next;
-        else if (!ptr1->next)
-            return NULL;
-        else if (!prev)
-            return head->next;
-
+        
+        if(ptr2 -> next) ptr2 -> next = ptr2 -> next -> next;
         return head;
     }
 };
