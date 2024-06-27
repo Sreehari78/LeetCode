@@ -13,8 +13,6 @@ public:
         res.push_back({1, 1});
 
         for (int i = 0; i < numRows - 2; i++) {
-            
-
             vector<int> ans, temp = res[1 + i];
             ans.push_back(1);
 
