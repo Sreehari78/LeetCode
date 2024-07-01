@@ -11,21 +11,37 @@
 class Solution {
 public:
     void reorderList(ListNode* head) {
-        vector<int> v;
-        ListNode* ptr = head;
+        if (!head || !head -> next) return;
+        ListNode* hare = head;
+        ListNode* tortise = head;
+        ListNode* left = nullptr;
+
+        while (hare && hare->next) {
+            hare = hare->next->next;
+            tortise = tortise->next;
+        }
         
-        while(ptr) {
-            v.push_back(ptr -> val);
-            ptr = ptr -> next;
+        while (tortise) {
+            ListNode* right = tortise->next;
+            tortise->next = left;
+            left = tortise;
+            tortise = right;
         }
 
-        int i = 0, j = v.size() - 1, count = 0;
-        ptr = head;
+        ListNode* first = head;
+        ListNode* second = left;
+        
+        while (second -> next) {
+            ListNode* temp1 = first -> next;
+            ListNode* temp2 = second -> next;
 
-        while(i <= j) {
-            if(count++ % 2 == 0) ptr -> val = v[i++];
-            else ptr -> val = v[j--];
-            ptr = ptr -> next;
+            first -> next = second;
+            second -> next = temp1;
+
+            first = temp1;
+            second = temp2;            
         }
+
+        return;
     }
 };
