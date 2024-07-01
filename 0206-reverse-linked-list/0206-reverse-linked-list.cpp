@@ -14,24 +14,20 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
+        
+        if(!head || ! head -> next) return head;
 
-        if(!head) return head;
+        ListNode* left = nullptr;
+        ListNode* current = head;
+        ListNode* right = current -> next;
 
-        ListNode* ptr = head;
-        vector<int> v;
-
-        while(ptr) {
-            v.push_back(ptr -> val);
-            ptr = ptr -> next;
+        while(right) {
+            current -> next = left;
+            left = current;
+            current = right;
+            right = right -> next;
         }
-
-        ptr = head;
-
-        for(int i = v.size() - 1; i > -1; i--) {
-            ptr -> val = v[i];
-            ptr = ptr -> next;
-        }
-
-        return head;
+        current -> next = left;
+        return current;
     }
 };
