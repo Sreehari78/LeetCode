@@ -15,20 +15,21 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        if(!head || ! head -> next) return head;
+        if (!head || !head->next)
+            return head;
 
         ListNode* left = nullptr;
         ListNode* current = head;
-        ListNode* right = current -> next;
+        ListNode* right = current->next;
 
-        while(right) {
-            current -> next = left;
+        while (right) {
+            current->next = left;
             left = current;
             current = right;
-            right = right -> next;
+            right = right->next;
         }
-        
-        current -> next = left;
+
+        current->next = left;
         return current;
     }
 };
