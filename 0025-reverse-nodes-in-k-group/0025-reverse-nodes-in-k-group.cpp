@@ -14,7 +14,7 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
+
         ListNode* current = head;
         ListNode* left = nullptr;
         ListNode* prev = nullptr;
@@ -24,10 +24,11 @@ public:
         while (current) {
             int count = k, n = 0;
             ListNode* i = current;
-            while(i && n++ < k) 
+
+            while (i && n++ < k)
                 i = i->next;
-            
-            if(n < k) {
+
+            if (n < k) {
                 prev->next = current;
                 return head;
             }
@@ -38,16 +39,18 @@ public:
                 left = current;
                 current = right;
             }
-            
-            if(isFirst) {
+
+            if (isFirst) {
                 head = left;
                 isFirst = false;
             }
+            
             ListNode* temp = left;
             while (temp->next)
                 temp = temp->next;
 
-            if(prev) prev->next = left;
+            if (prev)
+                prev->next = left;
 
             left = nullptr;
             prev = temp;
