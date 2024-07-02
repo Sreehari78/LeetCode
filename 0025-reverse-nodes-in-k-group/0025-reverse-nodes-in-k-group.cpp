@@ -23,10 +23,10 @@ public:
 
         while (current) {
             int count = k, n = 0;
-            ListNode* i = current;
+            ListNode* it = current;
 
-            while (i && n++ < k)
-                i = i->next;
+            while (it && n++ < k)
+                it = it->next;
 
             if (n < k) {
                 prev->next = current;
@@ -44,7 +44,7 @@ public:
                 head = left;
                 isFirst = false;
             }
-            
+
             ListNode* temp = left;
             while (temp->next)
                 temp = temp->next;
