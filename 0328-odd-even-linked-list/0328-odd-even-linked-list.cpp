@@ -18,18 +18,18 @@ public:
         if (!head || !head->next)
             return head;
 
-        ListNode* ptr1 = head;
-        ListNode* ptr2 = head->next;
-        ListNode* ptr3 = head->next;
+        ListNode* odd = head;
+        ListNode* even = head->next;
+        ListNode* evenStart = head->next;
 
-        while (ptr1 && ptr2 && ptr1->next && ptr2->next) {
-            ptr1->next = ptr2->next;
-            ptr1 = ptr1->next;
-            ptr2->next = ptr1->next;
-            ptr2 = ptr2->next;
+        while (odd && even && odd->next && even->next) {
+            odd->next = even->next;
+            odd = odd->next;
+            even->next = odd->next;
+            even = even->next;
         }
 
-        ptr1->next = ptr3;
+        odd->next = evenStart;
 
         return head;
     }
