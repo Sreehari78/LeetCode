@@ -20,16 +20,17 @@ public:
 
         ListNode* odd = head;
         ListNode* even = head->next;
-        ListNode* evenStart = head->next;
+        ListNode* evenHead = head->next;
 
         while (odd && even && odd->next && even->next) {
-            odd->next = even->next;
+            odd->next = odd->next->next;
+            even->next = even->next->next;
+
             odd = odd->next;
-            even->next = odd->next;
             even = even->next;
         }
 
-        odd->next = evenStart;
+        odd->next = evenHead;
 
         return head;
     }
