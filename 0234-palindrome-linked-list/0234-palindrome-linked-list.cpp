@@ -8,36 +8,48 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
- int init = [] {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);  
-    ofstream out("user.out"); 
-    for (string s; getline(cin, s);) 
-        out << (equal(s.begin()+1, s.begin()+s.size()/2, s.rbegin()+1) ? "true\n" : "false\n");  
-    out.flush(); 
-    exit(0);  
-    return 0;
-}();
-
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        stack<int> st;
-        ListNode *temp=head;
-        while(temp!=NULL)
-        {
-            st.push(temp->val);
-            temp=temp->next;
-        }
-        temp=head;
-      while (temp != NULL) {
-           if (!st.empty() && st.top() == temp->val) {
-                st.pop(); // Remove the top element from the stack
-                temp = temp->next;
-           } else
-                return false; 
+        if (head && head->next && !head->next->next)
+            return head->val == head->next->val;
 
-}
-return true;     
+        bool isOdd = true;
+        ListNode* hare = head;
+        ListNode* tortise = head;
+        ListNode* left = nullptr;
+
+        while (hare) {
+            hare = hare->next;
+            isOdd = !isOdd;
+        }
+
+        hare = head;
+
+        while (hare && hare->next) {
+            hare = hare->next->next;
+            tortise = tortise->next;
+        }
+
+        if (!isOdd)
+            tortise = tortise->next;
+
+        while (tortise) {
+            ListNode* right = tortise->next;
+            tortise->next = left;
+            left = tortise;
+            tortise = right;
+        }
+
+        tortise = left;
+
+        while (head && tortise) {
+            if (head->val != tortise->val)
+                return false;
+            head = head->next;
+            tortise = tortise->next;
+        }
+
+        return true;
     }
 };
