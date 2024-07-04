@@ -5,29 +5,27 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        if(nums.size() == 3) return nums[0] + nums[1] + nums[2];
-
         sort(nums.begin(), nums.end());
+        int res = INT_MAX, minDiff  = INT_MAX;
 
-        int min = INT_MAX, result = 0;
-        for(int i = 0; i < nums.size(); i++) {
+        for(int left = 0; left < nums.size(); left++) {
+            if(left > 0 && nums[left] == nums[left - 1]) continue;
+            int mid = left + 1, right = nums.size() - 1;
 
-            int k = nums.size() - 1, j = i + 1;
+            while(mid < right) {
+                int sum = nums[left] + nums[mid] + nums[right];
 
-            while(j < k) {
-                int sum = nums[i] + nums[j] + nums[k];
-                if(sum < target) j++;
-                else if(sum > target) k--;
-                else return sum;
-
-                int diff = abs(sum - target);
-                if(min > diff) {
-                    min = diff;
-                    result = sum;
+                if(minDiff > abs(target - sum)) {
+                    minDiff = abs(target - sum);
+                    res = sum;
                 }
+
+                if(sum < target) mid++;
+                else if(sum > target) right--;
+                else return sum;
             }
         }
 
-        return result;
+        return res;
     }
 };
