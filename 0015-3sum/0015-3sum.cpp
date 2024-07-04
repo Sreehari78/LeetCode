@@ -4,29 +4,27 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
-        vector<vector<int>> ans;
+
+        vector<vector<int>> res;
         sort(nums.begin(), nums.end());
+        
+        for(int left = 0; left < nums.size(); left++) {
+            if(left > 0 && nums[left] == nums[left - 1]) continue;
+            int mid = left + 1, right = nums.size() - 1;
 
-        for(int i = 0; i < nums.size(); i++) {
-            if(i > 0 && nums[i] == nums[i - 1]) continue;
-            int k = nums.size() - 1, j = i + 1;
+            while(mid < right) {
+                int sum = nums[left] + nums[mid] + nums[right];
 
-            while(j < k) {
-                int sum = nums[i] + nums[j] + nums[k];
-                if(sum > 0) k--;
-                else if(sum < 0) j++;
+                if(sum > 0) right--;
+                else if(sum < 0) mid++;
                 else {
-                    vector<int> temp = {nums[i], nums[j], nums[k]};
-                    ans.push_back(temp);
-                    j++;
-                    k--;
-                    while(j < k && nums[j] == nums[j - 1]) j++;
-                    while(j < k && nums[k] == nums[k + 1]) k--;                    
+                    res.push_back({nums[left], nums[mid++], nums[right--]});
+                    while(mid < right && nums[mid] == nums[mid - 1]) mid++;
+                    while(mid < right && nums[right] == nums[right + 1]) right--;
                 }
             }
         }
 
-        return ans;
+        return res;
     }
 };
