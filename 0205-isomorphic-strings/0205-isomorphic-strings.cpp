@@ -1,25 +1,15 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-
         if (s.length() != t.length())
             return false;
+        vector<int> v1(200, 0), v2(200, 0);
 
-        unordered_map<char, char> mp1, mp2;
-        int n = s.length();
-
-        for (int i = 0; i < n; i++) {
-            if (!mp1[s[i]])
-                mp1[s[i]] = t[i];
-                
-            if (!mp2[t[i]])
-                mp2[t[i]] = s[i];
-
-            if (mp1[s[i]] != t[i] || mp2[t[i]] != s[i])
+        for (int i = 0; i < s.length(); i++) {
+            if (v1[s[i]] != v2[t[i]])
                 return false;
+
+            v1[s[i]] = v2[t[i]] = i + 1;
         }
 
         return true;
