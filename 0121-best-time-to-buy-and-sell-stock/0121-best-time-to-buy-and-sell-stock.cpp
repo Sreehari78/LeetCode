@@ -6,9 +6,9 @@ public:
         std::cout.tie(nullptr);
 
         int mini = prices[0], profit = 0;
-        for (int i = 0; i < prices.size(); i++) {
-            profit = max(profit, prices[i] - mini);
-            mini = min(mini, prices[i]);
+        for (int it: prices) {
+            profit = max(profit, it - mini);
+            mini = min(mini, it);
         }
 
         return profit;
