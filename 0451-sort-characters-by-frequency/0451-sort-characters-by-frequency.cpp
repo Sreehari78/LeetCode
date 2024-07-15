@@ -2,27 +2,17 @@ class Solution {
 public:
     string frequencySort(string s) {
         unordered_map<char, int> mp;
-        string str = "";
+        vector<pair<char, int>> v;
 
-        for(char c: s) mp[c]++;
+        for(char it: s) mp[it]++;
+        for(auto it: mp) v.push_back(it);
 
-        vector<pair<char, int>> v(mp.begin(), mp.end());
-        sort(v.begin(), v.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
+        sort(v.begin(), v.end(), [](auto &a, auto &b) {
             return a.second > b.second;
         });
 
-        for(auto it: v)
-            while(it.second--)
-                str += it.first;
-
-        return str;
+        s = "";
+        for(auto it: v) while(it.second--) s += it.first;
+        return s;
     }
 };
-
-auto init = []()
-{ 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    return 'c';
-}();
