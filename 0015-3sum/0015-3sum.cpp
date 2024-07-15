@@ -15,14 +15,15 @@ public:
             while(mid < right) {
                 int sum = nums[left] + nums[mid] + nums[right];
 
-                if(sum > 0) right--;
-                else if(sum < 0) mid++;
+                if(sum < 0) mid++;
+                else if(sum > 0) right--;
                 else {
                     res.push_back({nums[left], nums[mid++], nums[right--]});
                     while(mid < right && nums[mid] == nums[mid - 1]) mid++;
                     while(mid < right && nums[right] == nums[right + 1]) right--;
                 }
-            }
+                
+            } 
         }
 
         return res;
