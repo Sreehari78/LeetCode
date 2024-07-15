@@ -4,32 +4,37 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
+        if (!s.length())
+            return 0;
 
-        string str = "";
-        for(int i = 0; i < s.length(); i++)
-            if(s[i] != ' ') {
-                str += s[i];
-                if(s[i+1] == ' ') break;
-            }
+        long long res = 0, k = 0;
+        bool isNegative = false;
 
-        int i = 0, flag = 0, n = str.length();
-        char sign = str[0];
+        while (k < s.length())
+            if (s[k++] != ' ')
+                break;
 
-        if(sign == '-' || sign == '+') {
-            i = 1;
-            if(sign == '-') flag = 1;
-        }
+        if (s[k - 1] == '-')
+            isNegative = true;
+        else if (s[k - 1] == '+')
+            isNegative = false;
+        else if (isdigit(s[k - 1]))
+            res = s[k - 1] - '0';
+        else
+            return res;
 
-        long val = 0;
-        for(i; i < n && isdigit(str[i]) && val <= INT_MAX; i++)
-            val = val * 10 + str[i] - '0';
-        
-        if(flag) val *= -1;
+        for (int i = k; i < s.length(); i++)
+            if (res > INT_MAX)
+                break;
+            else if (isdigit(s[i]))
+                res = res * 10 + s[i] - '0';
+            else
+                break;
 
-        if(val > INT_MAX) return 2147483647;
-        if(val < INT_MIN) return -2147483648;
-
-        return val;
-
+        if (isNegative)
+            res* -1 < INT_MIN ? res = INT_MIN : res = res * -1;
+        else
+            res > INT_MAX ? res = INT_MAX : res = res;
+        return res;
     }
 };
