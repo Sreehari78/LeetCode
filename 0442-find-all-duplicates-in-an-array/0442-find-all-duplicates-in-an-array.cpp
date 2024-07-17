@@ -1,19 +1,15 @@
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        vector<int> result;
+        vector<int> res;
 
-        for (int it : nums) {
-            int x = abs(it) - 1;
-            if (nums[x] < 0)
-                result.push_back(abs(it));
-            else
-                nums[x] *= -1;
-        }
+        for (int i = 0; i < nums.size(); i++)
+            nums[(nums[i] - 1) % nums.size()] += nums.size();
 
-        return result;
+        for (int i = 0; i < nums.size(); i++)
+            if ((nums[i] - 1) / nums.size() > 1)
+                res.push_back(i + 1);
+
+        return res;
     }
 };
