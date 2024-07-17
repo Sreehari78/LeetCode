@@ -20,16 +20,14 @@ public:
 
         ListNode* left = nullptr;
         ListNode* current = head;
-        ListNode* right = current->next;
 
-        while (right) {
+        while (current) {
+            ListNode* right = current->next;
             current->next = left;
             left = current;
             current = right;
-            right = right->next;
         }
 
-        current->next = left;
-        return current;
+        return left;
     }
 };
