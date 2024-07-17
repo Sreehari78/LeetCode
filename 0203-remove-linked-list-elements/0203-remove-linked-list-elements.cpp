@@ -11,21 +11,21 @@
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
+        if (!head)
+            return nullptr;
 
-        ListNode* temp = new ListNode(0);
-        temp->next = head;
+        ListNode* res = new ListNode(0);
+        res->next = head;
 
-        ListNode* curr = temp;
+        ListNode* temp = res;
 
-        while (curr->next)
-            if (curr->next->val == val)
-                curr->next = curr->next->next;
-            else
-                curr = curr->next;
+        while (temp != nullptr) {
+            while (temp->next != nullptr && temp->next->val == val)
+                temp->next = temp->next->next;
 
-        return temp->next;
+            temp = temp->next;
+        }
+
+        return res->next;
     }
 };
