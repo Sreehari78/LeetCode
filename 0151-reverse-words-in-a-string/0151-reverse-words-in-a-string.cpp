@@ -1,6 +1,10 @@
 class Solution {
 public:
     string reverseWords(string s) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         stack<string> st;
         string res = "", word = "";
 
