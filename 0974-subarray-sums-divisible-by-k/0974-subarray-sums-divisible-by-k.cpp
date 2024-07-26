@@ -1,6 +1,10 @@
 class Solution {
 public:
     int subarraysDivByK(vector<int>& nums, int k) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+
         unordered_map<int, int> mp;
         int sum = 0, res = 0;
 
