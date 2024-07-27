@@ -1,22 +1,17 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
+        if(s.length() == 0) return 0;
+        int left = 0, right = 0, res = 1;
+        unordered_map<int, int> mp;
 
-        int left = 0, right = 0, n = s.length(), result = 0;
-        unordered_map<char, int>mp;
-
-        while(right < n) {
-            if(mp[s[right]] != 0) {
-                result = max(result, right - left);
-                mp[s[left++]]--;
-            }
-            else mp[s[right++]]++;
+        while(right < s.length() && left <= right) {
+            mp[s[right]]++;
+            while(mp[s[right]] == 2) mp[s[left++]]--;
+            right++;
+            res = max(res, right - left);
         }
-        
-        result = max(result, right - left);
-        return result;
+
+        return res;
     }
 };
