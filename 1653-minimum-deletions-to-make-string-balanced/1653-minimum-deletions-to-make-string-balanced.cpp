@@ -6,8 +6,6 @@ public:
         cout.tie(nullptr);
 
         int prefix = 0, suffix = 0, res = INT_MAX;
-        // if (s.length() == 1)
-        //     return 0;
 
         for (int i = 1; i < s.length(); i++)
             if (s[i] == 'a')
