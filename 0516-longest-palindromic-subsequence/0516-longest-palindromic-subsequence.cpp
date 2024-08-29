@@ -1,6 +1,6 @@
 class Solution {
 private:
-    vector<vector<int>> dp;
+    // vector<vector<int>> dp;
 
     // int helper(string& s, int i, int j) {
     //     if(i > j)
@@ -24,16 +24,16 @@ private:
 
 public:
     int longestPalindromeSubseq(string s) {
-        dp.resize(s.length() + 1, vector<int>(s.length() + 1, 0));
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+
+        vector<vector<int>> dp(s.length() + 1, vector<int>(s.length() + 1, 0));
         string t = s;
         reverse(t.begin(), t.end());
 
         for(int i = 1; i < s.length() + 1; i++)
             for(int j = 1; j < s.length() + 1; j++) {
-                // if(i == j) {
-                //     dp[i][j] = 1;
-                //     continue;
-                // }
                 if(s[i - 1] == t[j - 1])
                     dp[i][j] = 1 + dp[i - 1][j - 1];
                 else
