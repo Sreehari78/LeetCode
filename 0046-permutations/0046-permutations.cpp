@@ -1,28 +1,24 @@
 class Solution {
-public:
-    vector<vector<int>> result;
+private:
+    vector<vector<int>> res;
     vector<int> ans;
-    unordered_map<int, int> mp;
-
-    void reccursiveMethod(vector<int>& nums) {
-        if(ans.size() == nums.size()) {
-            result.push_back(ans);
+    void helper(vector<int>& nums) {
+        if (ans.size() == nums.size()) {
+            res.push_back(ans);
             return;
         }
 
-        for(int i = 0; i < nums.size(); i++) {
-            if(mp[i] == 0) {
+        for (int i = 0; i < nums.size(); i++)
+            if (find(ans.begin(), ans.end(), nums[i]) == ans.end()) {
                 ans.push_back(nums[i]);
-                mp[i] = 1;
-                reccursiveMethod(nums);
-                mp[i] = 0;
+                helper(nums);
                 ans.pop_back();
             }
-        }
+}
 
-    }
+public : 
     vector<vector<int>> permute(vector<int>& nums) {
-        reccursiveMethod(nums);
-        return result;
+        helper(nums);
+        return res;
     }
 };
