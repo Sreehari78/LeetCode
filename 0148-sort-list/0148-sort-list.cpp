@@ -14,18 +14,16 @@ public:
         std::ios_base::sync_with_stdio(false);
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
-        
+
         if (!head || !head->next)
             return head;
 
-        auto compare = [](ListNode* a, ListNode* b) {
-            return a->val > b->val;
-        };
-
-        priority_queue<ListNode*, vector<ListNode*>,decltype(compare)> pq(compare);
+        priority_queue<ListNode*, vector<ListNode*>,
+                       function<bool(ListNode*, ListNode*)>>
+            pq([](ListNode* a, ListNode* b) { return a->val > b->val; });
         ListNode* ptr = head;
 
-        while(ptr) {
+        while (ptr) {
             pq.push(ptr);
             ptr = ptr->next;
         }
@@ -37,7 +35,7 @@ public:
         while (!pq.empty()) {
             ptr->next = pq.top();
             pq.pop();
-            ptr = ptr->next; 
+            ptr = ptr->next;
         }
 
         ptr->next = nullptr;
