@@ -11,22 +11,32 @@
 class Solution {
 public:
     ListNode* sortList(ListNode* head) {
+        if (!head || !head->next)
+            return head;
+
+        auto compare = [](ListNode* a, ListNode* b) {
+            return a->val > b->val;
+        };
+
+        priority_queue<ListNode*, vector<ListNode*>,decltype(compare)> pq(compare);
         ListNode* ptr = head;
-        vector<int> v;
 
         while(ptr) {
-            v.push_back(ptr -> val);
-            ptr = ptr -> next;
+            pq.push(ptr);
+            ptr = ptr->next;
         }
 
-        sort(v.begin(), v.end());
-
+        head = pq.top();
+        pq.pop();
         ptr = head;
-        for(int it: v) {
-            ptr -> val = it;
-            ptr = ptr -> next;
+
+        while (!pq.empty()) {
+            ptr->next = pq.top();
+            pq.pop();
+            ptr = ptr->next; 
         }
 
+        ptr->next = nullptr;
         return head;
     }
 };
