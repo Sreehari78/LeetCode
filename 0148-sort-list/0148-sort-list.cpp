@@ -18,9 +18,11 @@ public:
         if (!head || !head->next)
             return head;
 
-        priority_queue<ListNode*, vector<ListNode*>,
-                       function<bool(ListNode*, ListNode*)>>
-            pq([](ListNode* a, ListNode* b) { return a->val > b->val; });
+        auto compare = [](ListNode* a, ListNode* b) {
+            return a->val > b->val;
+        };
+
+        priority_queue<ListNode*, vector<ListNode*>,decltype(compare)> pq(compare);
         ListNode* ptr = head;
 
         while (ptr) {
