@@ -1,26 +1,23 @@
 class Solution {
-public:
+private:
     vector<vector<int>> res;
     vector<int> ans;
-
-    void subsetReccursion(vector<int>& nums, int index) {
-        if(index >= nums.size()) {
+    
+    void helper(vector<int>& nums, int n) {
+        if(n == nums.size()) {
             res.push_back(ans);
             return;
         }
-
-        ans.push_back(nums[index]);
-        subsetReccursion(nums, ++index);
+        
+        ans.push_back(nums[n]);
+        helper(nums, n + 1);
         ans.pop_back();
-        subsetReccursion(nums, index);
+        helper(nums, n + 1);
     }
 
+public:
     vector<vector<int>> subsets(vector<int>& nums) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-        
-        subsetReccursion(nums, 0);
-        return res;
+        helper(nums, 0);
+        return res;    
     }
 };
