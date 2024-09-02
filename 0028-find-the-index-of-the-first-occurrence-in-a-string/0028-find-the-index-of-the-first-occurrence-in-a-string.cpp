@@ -1,17 +1,14 @@
 class Solution {
 public:
-    int strStr(string haystack, string needle) { 
-        if(needle.length() > haystack.length()) return -1;
-        if(needle == haystack) return 0;
-        else if(haystack.length() == 1) return -1;
+    int strStr(string haystack, string needle) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
         
-        string subhay = "";
-
-        for(int i = 0; i < haystack.length(); i++){
-            subhay = haystack.substr(i, needle.length());
-            if(subhay == needle) return i;
-        }
-
+        for(int i = 0; i < haystack.size(); i++)
+            if(haystack.substr(i, needle.size()) ==  needle)
+                return i;
+        
         return -1;
     }
 };
