@@ -4,15 +4,17 @@ private:
     vector<int> ans;
     
     void helper(vector<int>& nums, int n) {
-        if(n == nums.size()) {
+        // if(n == nums.size()) {
             res.push_back(ans);
-            return;
-        }
+        //     return;
+        // }
         
-        ans.push_back(nums[n]);
-        helper(nums, n + 1);
-        ans.pop_back();
-        helper(nums, n + 1);
+        for(int i =n; i < nums.size(); i++) {
+            ans.push_back(nums[i]);
+            helper(nums, i + 1);
+            ans.pop_back();
+            // helper(nums, n + 1);
+        }
     }
 
 public:
