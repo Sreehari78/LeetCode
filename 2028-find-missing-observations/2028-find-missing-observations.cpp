@@ -1,6 +1,10 @@
 class Solution {
 public:
     vector<int> missingRolls(vector<int>& rolls, int mean, int n) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         long sum = 0, x = 0, m = rolls.size(), val = 0, rem = 0;
 
         sum = accumulate(rolls.begin(), rolls.end(), 0);
