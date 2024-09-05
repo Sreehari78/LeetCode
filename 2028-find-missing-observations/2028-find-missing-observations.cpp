@@ -5,10 +5,10 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        int sum = 0, x = 0, m = rolls.size(), val = 0, rem = 0;
+        int sum = 0, x = 0, val = 0, rem = 0;
 
         sum = accumulate(rolls.begin(), rolls.end(), 0);
-        x = mean * (n + m) - sum;
+        x = mean * (n + rolls.size()) - sum;
         val = x / n;
 
         if (val > 6 || val < 1)
