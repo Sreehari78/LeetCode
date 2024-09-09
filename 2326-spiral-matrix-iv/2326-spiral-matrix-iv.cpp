@@ -11,6 +11,10 @@
 class Solution {
 public:
     vector<vector<int>> spiralMatrix(int m, int n, ListNode* head) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+
         vector<vector<int>> res(m, vector<int>(n, -1));
         int i = 0, j = 0, count = 0;
 
@@ -40,6 +44,7 @@ public:
             j++;
             i--;
             count++;
+            
             while(ptr && i > count - 1) {
                 res[i--][j] = ptr->val;
                 ptr = ptr->next;
