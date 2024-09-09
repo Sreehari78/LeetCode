@@ -1,6 +1,10 @@
 class Solution {
 public:
     vector<vector<char>> rotateTheBox(vector<vector<char>>& box) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         int row = box.size(), col = box[0].size();
         vector<vector<char>> res(col, vector<char>(row, ' '));
 
