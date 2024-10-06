@@ -1,6 +1,10 @@
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+
         stack<int> st;
         int n = nums1.size(), m = nums2.size();
         vector<int> res(n, -1);
