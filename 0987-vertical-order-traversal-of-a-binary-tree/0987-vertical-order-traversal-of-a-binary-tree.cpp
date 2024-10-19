@@ -6,47 +6,65 @@
  *     TreeNode *right;
  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
- * right(right) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
 class Solution {
 public:
-    int x = 0, y = 0;
-    vector<pair<TreeNode*, pair<int, int>>> vec;
-
-    void preOrder(TreeNode* root, int x, int y) {
-        if (!root)
-            return;
-        vec.push_back({root, {x, y}});
-        preOrder(root->left, x - 1, y + 1);
-        preOrder(root->right, x + 1, y + 1);
-    }
-
     vector<vector<int>> verticalTraversal(TreeNode* root) {
-        preOrder(root, 0, 0);
-        sort(vec.begin(), vec.end(), [](const auto& a, const auto& b) {
-            if(a.second.first == b.second.first && a.second.second == b.second.second)
-                return (a.first -> val < b.first -> val);
-            if (a.second.first == b.second.first)
-                return (a.second.second < b.second.second);
-            else
-                return (a.second.first < b.second.first);
-        });
+        queue<pair<TreeNode*, pair<int, int>>> q;
+        vector<vector<int>> ans, res;
 
-        for(auto it: vec) cout<< it.first -> val << " " << it.second.first << " " << it.second.second << endl;
-        vector<vector<int>> result;
-        int left = vec[0].second.first, right = vec[vec.size() - 1].second.first, i = 0;
+        ans.push_back({root->val, 0, 0});
+        q.push({root, {0, 0}});
 
-        while (left < right) {
-            vector<int> ans;
-            left = vec[i].second.first;
+        while(!q.empty()) {
+            queue<pair<TreeNode*, pair<int, int>>> q1;
 
-            for (;i < vec.size() && vec[i].second.first == left; i++)
-                ans.push_back(vec[i].first->val);            
-            result.push_back(ans);
+            while(!q.empty()) {
+                TreeNode* node = q.front().first;
+                int x = q.front().second.first, y = q.front().second.second;
+                q.pop();
+
+                if(node->left) {
+                    q1.push({node->left, {x - 1, y + 1}});
+                    ans.push_back({node->left->val, x - 1, y + 1});
+                }
+
+                if(node->right) {
+                    q1.push({node->right, {x + 1, y + 1}});
+                    ans.push_back({node->right->val, x + 1, y + 1});
+                }
+            }
+            q = q1;
         }
 
-        return result;
+        sort(ans.begin(), ans.end(), [](auto& a, auto& b){
+            if (a[1] == b[1] && a[2] == b[2])
+                return a[0] < b[0];
+            
+            if(a[1] == b[1])
+                return a[2] < b[2];
+            
+            return a[1] < b[1];
+        }); 
+
+        vector<int> temp;
+        temp.push_back(ans[0][0]);
+
+        for(int i = 1; i < ans.size(); i++) {
+            if(ans[i - 1][1] != ans[i][1]) {
+                res.push_back(temp);
+                temp.erase(temp.begin(), temp.end());
+            }
+
+            temp.push_back(ans[i][0]);
+        }
+        res.push_back(temp);
+
+        // for(auto& it: ans)
+        //     cout<<it[0]<<" "<<it[1]<<" "<<it[2]<<endl;
+        
+        return res;
     }
 };
