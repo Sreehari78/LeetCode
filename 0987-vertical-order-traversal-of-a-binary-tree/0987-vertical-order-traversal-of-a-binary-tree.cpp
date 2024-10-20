@@ -60,11 +60,7 @@ public:
 
             temp.push_back(ans[i][0]);
         }
-        res.push_back(temp);
-
-        // for(auto& it: ans)
-        //     cout<<it[0]<<" "<<it[1]<<" "<<it[2]<<endl;
-        
+        res.push_back(temp);        
         return res;
     }
 };
