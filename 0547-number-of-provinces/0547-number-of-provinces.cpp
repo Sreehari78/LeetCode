@@ -1,29 +1,56 @@
 class Solution {
 public:
-    int n;
+    vector<bool> visited;
+    int cities;
 
-    void dfs(int u, vector<bool>& visited, vector<vector<int>>& isConnected) {
-        if(visited[u])
-            return;
+    // void dfs(int u, vector<vector<int>>& isConnected) {
+    //     if(visited[u])
+    //         return;
         
-        visited[u] = true;
+    //     visited[u] = true;
 
-        for(int i = 0; i < n; i++)
-            if(isConnected[u][i] == 1)
-                dfs(i, visited, isConnected);
+    //     for(int city = 0; city < cities; city++)
+    //         if(isConnected[u][city] && !visited[city])
+    //             dfs(city, isConnected);
+    // }
+
+    int bfs(vector<vector<int>>& isConnected) {
+        int provinces = 0;
+        queue<int> q;
+
+        for(int i = 0; i < cities; i++) {
+            if(!visited[i]) {
+                q.push(i);
+                provinces++;
+            }
+            while(!q.empty()) {
+                int u = q.front();
+                q.pop();
+
+                for(int city = 0; city < cities; city++)
+                    if(isConnected[u][city] && !visited[city]) {
+                        visited[city] = true;
+                        q.push(city);
+                    }
+            }
+        }
+
+        return provinces;
     }
 
     int findCircleNum(vector<vector<int>>& isConnected) {
-        int res = 0;
-        n = isConnected.size();
-        vector<bool> visited(n, false);
+        int provinces = 0;
+        cities = isConnected.size();
+        visited.resize(cities, false);
 
-        for(int i = 0; i < n; i++)
-            if(!visited[i]) {
-                dfs(i, visited, isConnected);
-                res++;
-            }
+        // for(int city = 0; city < cities; city++)
+        //     if(!visited[city]) {
+        //         provinces++;
+        //         dfs(city, isConnected);
+        //     }
+
+        provinces = bfs(isConnected);
         
-        return res;
+        return provinces;
     }
 };
