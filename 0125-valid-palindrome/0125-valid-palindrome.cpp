@@ -1,19 +1,18 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        std::ios_base::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        std::cout.tie(nullptr);
-
-        string s1 = "", s2 = "";
-
-        for (char it : s)
-            if (isalpha(it) || isdigit(it))
-                s1 += tolower(it);
-
-        s2 = s1;
-        reverse(s1.begin(), s1.end());
         
-        return s2 == s1;
+        string str = "", str1 = "";
+        for(int i = 0; i < s.length(); i++)
+            if(isalnum(s[i])) str += tolower(s[i]);
+        
+        str1 = str;
+        int n = str.length();
+        
+        for(int i = 0; i < n / 2; i++)
+            swap(str[i], str[n - i - 1]);
+        
+        if(str == str1) return true;
+        return false;
     }
 };
