@@ -36,4 +36,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0617-merge-two-binary-trees](https://github.com/Sreehari78/LeetCode/tree/main/0617-merge-two-binary-trees/) | Easy |
+## Linked List
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0083-remove-duplicates-from-sorted-list](https://github.com/Sreehari78/LeetCode/tree/main/0083-remove-duplicates-from-sorted-list/) | Easy |
 <!---LeetCode Topics End-->
