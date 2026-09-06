@@ -20,4 +20,20 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1422-maximum-score-after-splitting-a-string](https://github.com/Sreehari78/LeetCode/tree/main/1422-maximum-score-after-splitting-a-string/) | Easy |
+## Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0617-merge-two-binary-trees](https://github.com/Sreehari78/LeetCode/tree/main/0617-merge-two-binary-trees/) | Easy |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0617-merge-two-binary-trees](https://github.com/Sreehari78/LeetCode/tree/main/0617-merge-two-binary-trees/) | Easy |
+## Breadth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0617-merge-two-binary-trees](https://github.com/Sreehari78/LeetCode/tree/main/0617-merge-two-binary-trees/) | Easy |
+## Binary Tree
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0617-merge-two-binary-trees](https://github.com/Sreehari78/LeetCode/tree/main/0617-merge-two-binary-trees/) | Easy |
 <!---LeetCode Topics End-->
