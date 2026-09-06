@@ -5,6 +5,7 @@
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1422-maximum-score-after-splitting-a-string](https://github.com/Sreehari78/LeetCode/tree/main/1422-maximum-score-after-splitting-a-string/) | Easy |
 | [1629-slowest-key](https://github.com/Sreehari78/LeetCode/tree/main/1629-slowest-key/) | Easy |
 | [3258-count-substrings-that-satisfy-k-constraint-i](https://github.com/Sreehari78/LeetCode/tree/main/3258-count-substrings-that-satisfy-k-constraint-i/) | Easy |
 ## Sliding Window
@@ -15,4 +16,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1629-slowest-key](https://github.com/Sreehari78/LeetCode/tree/main/1629-slowest-key/) | Easy |
+## Prefix Sum
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1422-maximum-score-after-splitting-a-string](https://github.com/Sreehari78/LeetCode/tree/main/1422-maximum-score-after-splitting-a-string/) | Easy |
 <!---LeetCode Topics End-->
