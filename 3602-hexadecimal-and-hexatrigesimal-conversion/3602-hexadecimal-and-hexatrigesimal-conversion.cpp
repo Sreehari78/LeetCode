@@ -1,8 +1,7 @@
 class Solution {
 public:
     string concatHex36(int n) {
-        string hexd = "", hext = "", 
-        dataset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        string hexd = "", hext = "", dataset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int num1 = n * n, num2 = n * n * n;
 
         while (num1) {
