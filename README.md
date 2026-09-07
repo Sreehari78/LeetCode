@@ -45,4 +45,5 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0989-add-to-array-form-of-integer](https://github.com/Sreehari78/LeetCode/tree/main/0989-add-to-array-form-of-integer/) | Easy |
+| [3622-check-divisibility-by-digit-sum-and-product](https://github.com/Sreehari78/LeetCode/tree/main/3622-check-divisibility-by-digit-sum-and-product/) | Easy |
 <!---LeetCode Topics End-->
