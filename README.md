@@ -15,6 +15,7 @@
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0989-add-to-array-form-of-integer](https://github.com/Sreehari78/LeetCode/tree/main/0989-add-to-array-form-of-integer/) | Easy |
 | [1629-slowest-key](https://github.com/Sreehari78/LeetCode/tree/main/1629-slowest-key/) | Easy |
 ## Prefix Sum
 | Problem Name | Difficulty |
@@ -40,4 +41,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0083-remove-duplicates-from-sorted-list](https://github.com/Sreehari78/LeetCode/tree/main/0083-remove-duplicates-from-sorted-list/) | Easy |
+## Math
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0989-add-to-array-form-of-integer](https://github.com/Sreehari78/LeetCode/tree/main/0989-add-to-array-form-of-integer/) | Easy |
 <!---LeetCode Topics End-->
