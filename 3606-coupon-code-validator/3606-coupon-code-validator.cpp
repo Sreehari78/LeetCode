@@ -1,6 +1,10 @@
 class Solution {
 public:
     vector<string> validateCoupons(vector<string>& code, vector<string>& businessLine, vector<bool>& isActive) {
+        std::ios_base::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        std::cout.tie(nullptr);
+        
         vector<pair<string, string>> ans;
         vector<string> res;
         unordered_set<string> businessLineCheck = {"electronics", "grocery", "pharmacy", "restaurant"};
