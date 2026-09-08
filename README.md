@@ -21,6 +21,7 @@
 | [0989-add-to-array-form-of-integer](https://github.com/Sreehari78/LeetCode/tree/main/0989-add-to-array-form-of-integer/) | Easy |
 | [1629-slowest-key](https://github.com/Sreehari78/LeetCode/tree/main/1629-slowest-key/) | Easy |
 | [3606-coupon-code-validator](https://github.com/Sreehari78/LeetCode/tree/main/3606-coupon-code-validator/) | Easy |
+| [4024-nearest-available-drone](https://github.com/Sreehari78/LeetCode/tree/main/4024-nearest-available-drone/) | Easy |
 ## Prefix Sum
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -64,4 +65,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0303-range-sum-query-immutable](https://github.com/Sreehari78/LeetCode/tree/main/0303-range-sum-query-immutable/) | Easy |
+## Enumeration
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [4024-nearest-available-drone](https://github.com/Sreehari78/LeetCode/tree/main/4024-nearest-available-drone/) | Easy |
 <!---LeetCode Topics End-->
