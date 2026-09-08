@@ -12,7 +12,7 @@ public:
             left = right;
         }
         
-        for(auto  &[k, v] : mp) if(v == 1) res++;
+        for(auto &[k, v] : mp) if(v == 1) res++;
 
         return res;
     }
