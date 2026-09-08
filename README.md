@@ -17,12 +17,14 @@
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0303-range-sum-query-immutable](https://github.com/Sreehari78/LeetCode/tree/main/0303-range-sum-query-immutable/) | Easy |
 | [0989-add-to-array-form-of-integer](https://github.com/Sreehari78/LeetCode/tree/main/0989-add-to-array-form-of-integer/) | Easy |
 | [1629-slowest-key](https://github.com/Sreehari78/LeetCode/tree/main/1629-slowest-key/) | Easy |
 | [3606-coupon-code-validator](https://github.com/Sreehari78/LeetCode/tree/main/3606-coupon-code-validator/) | Easy |
 ## Prefix Sum
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0303-range-sum-query-immutable](https://github.com/Sreehari78/LeetCode/tree/main/0303-range-sum-query-immutable/) | Easy |
 | [1422-maximum-score-after-splitting-a-string](https://github.com/Sreehari78/LeetCode/tree/main/1422-maximum-score-after-splitting-a-string/) | Easy |
 ## Tree
 | Problem Name | Difficulty |
@@ -58,4 +60,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [3606-coupon-code-validator](https://github.com/Sreehari78/LeetCode/tree/main/3606-coupon-code-validator/) | Easy |
+## Design
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0303-range-sum-query-immutable](https://github.com/Sreehari78/LeetCode/tree/main/0303-range-sum-query-immutable/) | Easy |
 <!---LeetCode Topics End-->
