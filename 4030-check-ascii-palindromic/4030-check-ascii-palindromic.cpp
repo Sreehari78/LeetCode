@@ -6,24 +6,11 @@ public:
         std::cout.tie(nullptr);
 
         string binary = "";
-
-        for(char c : s) {
-            int ascii = c;
-            string ans = "";
-            
-            while(ascii) {
-                ans += static_cast<char> (ascii%2) + '0';
-                ascii /= 2;
-            }
-            
-            while(ans.length()%8 != 0)
-                ans += '0';
-
-            binary += ans;
-            
+        for (char c : s) {
+            int ascii = int(c);
+            string bin = bitset<8>(ascii).to_string();
+            binary += bin;
         }
-
-        cout<<binary;
 
         for(int i = 0; i < binary.length()/2; i++) {
             if(binary[i] != binary[binary.length() - 1 - i])
