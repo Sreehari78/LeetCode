@@ -17,9 +17,9 @@ public:
             if (score == k)
                 res++;
             
-            char prev = s[0];
+            char rotate = s[0];
             s.erase(0,1);
-            s.push_back(prev);
+            s.push_back(rotate);
         }
 
         return res;
