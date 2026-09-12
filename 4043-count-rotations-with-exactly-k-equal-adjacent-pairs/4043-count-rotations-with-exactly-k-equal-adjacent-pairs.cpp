@@ -17,8 +17,11 @@ public:
             if (score == k)
                 res++;
             
-            rotate(s.begin(), s.begin() + 1, s.end());
+            char rem = s[0];
+            s.erase(0,1);
+            s.push_back(rem);
         }
+        
         return res;
     }
 };
