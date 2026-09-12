@@ -21,6 +21,7 @@
 | [0989-add-to-array-form-of-integer](https://github.com/Sreehari78/LeetCode/tree/main/0989-add-to-array-form-of-integer/) | Easy |
 | [1629-slowest-key](https://github.com/Sreehari78/LeetCode/tree/main/1629-slowest-key/) | Easy |
 | [3606-coupon-code-validator](https://github.com/Sreehari78/LeetCode/tree/main/3606-coupon-code-validator/) | Easy |
+| [4010-maximize-pair-strength-using-gcd](https://github.com/Sreehari78/LeetCode/tree/main/4010-maximize-pair-strength-using-gcd/) | Easy |
 | [4020-elevator-requests-i](https://github.com/Sreehari78/LeetCode/tree/main/4020-elevator-requests-i/) | Easy |
 | [4024-nearest-available-drone](https://github.com/Sreehari78/LeetCode/tree/main/4024-nearest-available-drone/) | Easy |
 ## Prefix Sum
@@ -54,6 +55,7 @@
 | [0989-add-to-array-form-of-integer](https://github.com/Sreehari78/LeetCode/tree/main/0989-add-to-array-form-of-integer/) | Easy |
 | [3602-hexadecimal-and-hexatrigesimal-conversion](https://github.com/Sreehari78/LeetCode/tree/main/3602-hexadecimal-and-hexatrigesimal-conversion/) | Easy |
 | [3622-check-divisibility-by-digit-sum-and-product](https://github.com/Sreehari78/LeetCode/tree/main/3622-check-divisibility-by-digit-sum-and-product/) | Easy |
+| [4010-maximize-pair-strength-using-gcd](https://github.com/Sreehari78/LeetCode/tree/main/4010-maximize-pair-strength-using-gcd/) | Easy |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -69,9 +71,14 @@
 ## Enumeration
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [4010-maximize-pair-strength-using-gcd](https://github.com/Sreehari78/LeetCode/tree/main/4010-maximize-pair-strength-using-gcd/) | Easy |
 | [4024-nearest-available-drone](https://github.com/Sreehari78/LeetCode/tree/main/4024-nearest-available-drone/) | Easy |
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [4020-elevator-requests-i](https://github.com/Sreehari78/LeetCode/tree/main/4020-elevator-requests-i/) | Easy |
+## Number Theory
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [4010-maximize-pair-strength-using-gcd](https://github.com/Sreehari78/LeetCode/tree/main/4010-maximize-pair-strength-using-gcd/) | Easy |
 <!---LeetCode Topics End-->
