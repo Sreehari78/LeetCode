@@ -5,9 +5,9 @@ public:
         std::cin.tie(nullptr);
         std::cout.tie(nullptr);
 
-        int res = 0;
+        int res = 0, n = s.length();
 
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < n; i++) {
             int score = 0;
 
             for (int i = 1; i < s.length(); i++)
@@ -21,7 +21,7 @@ public:
             s.erase(0,1);
             s.push_back(rem);
         }
-        
+
         return res;
     }
 };
