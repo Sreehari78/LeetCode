@@ -17,9 +17,9 @@ public:
             if (score == k)
                 res++;
             
-            char rem = s[0];
+            char prev = s[0];
             s.erase(0,1);
-            s.push_back(rem);
+            s.push_back(prev);
         }
 
         return res;
