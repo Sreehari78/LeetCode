@@ -1,11 +1,5 @@
 class Solution {
 public:
-    Solution() {
-        ios::sync_with_stdio(false);
-        cin.tie(nullptr);
-        cout.tie(nullptr);
-    }
-    
     long long maxPairStrength(vector<int>& nums) {
         long long res = 0;
 
