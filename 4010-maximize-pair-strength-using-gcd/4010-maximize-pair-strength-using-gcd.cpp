@@ -7,7 +7,8 @@ public:
             for(int j = 0; j < nums.size(); j++) {
                 if(i == j) continue;
 
-                long long ans = (1LL * nums[i] * nums[j]) / pow(__gcd(nums[i], nums[j]), 2);
+                long long g = gcd(nums[i], nums[j]);
+                long long ans = (1LL * nums[i] / g * nums[j] / g);
                 res = max(res, ans);
             }
 
