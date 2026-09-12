@@ -10,6 +10,7 @@
 | [3258-count-substrings-that-satisfy-k-constraint-i](https://github.com/Sreehari78/LeetCode/tree/main/3258-count-substrings-that-satisfy-k-constraint-i/) | Easy |
 | [3602-hexadecimal-and-hexatrigesimal-conversion](https://github.com/Sreehari78/LeetCode/tree/main/3602-hexadecimal-and-hexatrigesimal-conversion/) | Easy |
 | [3606-coupon-code-validator](https://github.com/Sreehari78/LeetCode/tree/main/3606-coupon-code-validator/) | Easy |
+| [4006-count-valid-prefixes](https://github.com/Sreehari78/LeetCode/tree/main/4006-count-valid-prefixes/) | Easy |
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -81,4 +82,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [4010-maximize-pair-strength-using-gcd](https://github.com/Sreehari78/LeetCode/tree/main/4010-maximize-pair-strength-using-gcd/) | Easy |
+## Counting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [4006-count-valid-prefixes](https://github.com/Sreehari78/LeetCode/tree/main/4006-count-valid-prefixes/) | Easy |
 <!---LeetCode Topics End-->
